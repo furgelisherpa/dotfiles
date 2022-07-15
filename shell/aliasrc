@@ -29,8 +29,6 @@ alias \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
 	sdn="shutdown -h now" \
-	e="$EDITOR" \
-	v="$EDITOR" \
 	z="zathura" \
 	q="exit"
 
