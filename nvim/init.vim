@@ -130,10 +130,6 @@ autocmd VimLeave *.tex !texclear %
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
   	autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
 
-" Run xrdb whenever Xdefaults or Xresources are updated.
-	autocmd BufRead,BufNewFile Xresources,Xdefaults,xresources,xdefaults set filetype=xdefaults
-	autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
-
 " Compile and run java program
 	map <leader>r :!java %:p<CR>
 " Open Ultisnips file for respective filetype
