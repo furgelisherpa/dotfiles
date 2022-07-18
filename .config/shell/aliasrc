@@ -34,7 +34,29 @@ alias \
 
 alias \
 	magit="nvim -c MagitOnly" \
+
+# Debian Package Management
+alias \
 	pkgin="sudo apt install -y" \
 	pkgdel="sudo apt remove --purge -y" \
 	pkgser="sudo apt search" \
 	pkgclean="sudo apt autoremove -y" \
+
+# VoidLinux Package Management
+alias \
+    xin="sudo xbps-install -Sy" \
+    xser="sudo xbps-query -Rs" \
+    xdel="sudo xbps-remove -y" \
+
+# Tools
+alias \
+    sourcezsh="source $HOME/.config/zsh/.zshrc" \
+    sourcezenv="source $HOME/.zshenv" \
+
+# Config files
+alias \
+    cf="cd $HOME/.config && ls -lAh" \
+    cfv="vim $HOME/.config/nvim/init.vim" \
+    cfa="vim $HOME/.config/shell/aliasrc" \
+    cfz="vim $HOME/.config/zsh/.zshrc && sourcezsh" \
+    cfze="vim $HOME/.zshenv && source $HOME/.zshenv" \
