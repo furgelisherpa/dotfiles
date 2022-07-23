@@ -1,7 +1,0 @@
-ls
-apt search pywal
-apt search pywafoxl
-apt search pywalfox
-ls -lAh
-vim .zprofile
-source .zprofile
