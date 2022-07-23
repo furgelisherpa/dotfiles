@@ -1,0 +1,1 @@
+/home/dexter/.config/shell/profile

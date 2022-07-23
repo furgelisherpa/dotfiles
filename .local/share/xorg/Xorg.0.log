@@ -1,0 +1,334 @@
+[    39.557] 
+X.Org X Server 1.20.4
+X Protocol Version 11, Revision 0
+[    39.557] Build Operating System: Linux 5.10.0-10-amd64 x86_64 Debian
+[    39.558] Current Operating System: Linux debian 4.19.0-21-amd64 #1 SMP Debian 4.19.249-2 (2022-06-30) x86_64
+[    39.558] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.19.0-21-amd64 root=UUID=881c2556-ccc4-4a89-81aa-410579e122bb ro quiet
+[    39.558] Build Date: 18 December 2021  09:05:36AM
+[    39.558] xorg-server 2:1.20.4-1+deb10u4 (https://www.debian.org/support) 
+[    39.558] Current version of pixman: 0.36.0
+[    39.558] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[    39.558] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[    39.559] (==) Log file: "/home/dexter/.local/share/xorg/Xorg.0.log", Time: Sat Jul 23 19:32:19 2022
+[    39.614] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[    39.669] (==) No Layout section.  Using the first Screen section.
+[    39.669] (==) No screen section available. Using defaults.
+[    39.669] (**) |-->Screen "Default Screen Section" (0)
+[    39.669] (**) |   |-->Monitor "<default monitor>"
+[    39.678] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[    39.678] (==) Automatically adding devices
+[    39.678] (==) Automatically enabling devices
+[    39.678] (==) Automatically adding GPU devices
+[    39.678] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[    39.712] (WW) The directory "/usr/share/fonts/X11/cyrillic" does not exist.
+[    39.712] 	Entry deleted from font path.
+[    39.712] (WW) The directory "/usr/share/fonts/X11/100dpi/" does not exist.
+[    39.712] 	Entry deleted from font path.
+[    39.712] (WW) The directory "/usr/share/fonts/X11/75dpi/" does not exist.
+[    39.712] 	Entry deleted from font path.
+[    39.712] (WW) The directory "/usr/share/fonts/X11/Type1" does not exist.
+[    39.712] 	Entry deleted from font path.
+[    39.713] (WW) The directory "/usr/share/fonts/X11/100dpi" does not exist.
+[    39.713] 	Entry deleted from font path.
+[    39.713] (WW) The directory "/usr/share/fonts/X11/75dpi" does not exist.
+[    39.713] 	Entry deleted from font path.
+[    39.713] (==) FontPath set to:
+	/usr/share/fonts/X11/misc,
+	built-ins
+[    39.713] (==) ModulePath set to "/usr/lib/xorg/modules"
+[    39.713] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[    39.713] (II) Loader magic: 0x560bf9258e20
+[    39.713] (II) Module ABI versions:
+[    39.713] 	X.Org ANSI C Emulation: 0.4
+[    39.713] 	X.Org Video Driver: 24.0
+[    39.713] 	X.Org XInput driver : 24.1
+[    39.713] 	X.Org Server Extension : 10.0
+[    39.714] (++) using VT number 1
+
+[    39.716] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[    39.717] (II) xfree86: Adding drm device (/dev/dri/card0)
+[    39.718] (II) systemd-logind: got fd for /dev/dri/card0 226:0 fd 11 paused 0
+[    39.723] (--) PCI:*(0@0:2:0) 8086:29c2:8086:29c2 rev 16, Mem @ 0xfea80000/524288, 0xd0000000/268435456, 0xfe900000/1048576, I/O @ 0x0000dc00/8, BIOS @ 0x????????/131072
+[    39.723] (II) LoadModule: "glx"
+[    39.724] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[    39.781] (II) Module glx: vendor="X.Org Foundation"
+[    39.781] 	compiled for 1.20.4, module version = 1.0.0
+[    39.781] 	ABI class: X.Org Server Extension, version 10.0
+[    39.781] (==) Matched intel as autoconfigured driver 0
+[    39.782] (==) Matched modesetting as autoconfigured driver 1
+[    39.782] (==) Matched fbdev as autoconfigured driver 2
+[    39.782] (==) Matched vesa as autoconfigured driver 3
+[    39.782] (==) Assigned the driver to the xf86ConfigLayout
+[    39.782] (II) LoadModule: "intel"
+[    39.795] (II) Loading /usr/lib/xorg/modules/drivers/intel_drv.so
+[    39.853] (II) Module intel: vendor="X.Org Foundation"
+[    39.853] 	compiled for 1.20.1, module version = 2.99.917
+[    39.853] 	Module class: X.Org Video Driver
+[    39.853] 	ABI class: X.Org Video Driver, version 24.0
+[    39.853] (II) LoadModule: "modesetting"
+[    39.853] (II) Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+[    39.861] (II) Module modesetting: vendor="X.Org Foundation"
+[    39.861] 	compiled for 1.20.4, module version = 1.20.4
+[    39.861] 	Module class: X.Org Video Driver
+[    39.861] 	ABI class: X.Org Video Driver, version 24.0
+[    39.861] (II) LoadModule: "fbdev"
+[    39.862] (II) Loading /usr/lib/xorg/modules/drivers/fbdev_drv.so
+[    39.867] (II) Module fbdev: vendor="X.Org Foundation"
+[    39.868] 	compiled for 1.20.0, module version = 0.5.0
+[    39.868] 	Module class: X.Org Video Driver
+[    39.868] 	ABI class: X.Org Video Driver, version 24.0
+[    39.868] (II) LoadModule: "vesa"
+[    39.868] (II) Loading /usr/lib/xorg/modules/drivers/vesa_drv.so
+[    39.868] (II) Module vesa: vendor="X.Org Foundation"
+[    39.868] 	compiled for 1.20.1, module version = 2.4.0
+[    39.868] 	Module class: X.Org Video Driver
+[    39.869] 	ABI class: X.Org Video Driver, version 24.0
+[    39.869] (II) intel: Driver for Intel(R) Integrated Graphics Chipsets:
+	i810, i810-dc100, i810e, i815, i830M, 845G, 854, 852GM/855GM, 865G,
+	915G, E7221 (i915), 915GM, 945G, 945GM, 945GME, Pineview GM,
+	Pineview G, 965G, G35, 965Q, 946GZ, 965GM, 965GME/GLE, G33, Q35, Q33,
+	GM45, 4 Series, G45/G43, Q45/Q43, G41, B43
+[    39.869] (II) intel: Driver for Intel(R) HD Graphics
+[    39.869] (II) intel: Driver for Intel(R) Iris(TM) Graphics
+[    39.869] (II) intel: Driver for Intel(R) Iris(TM) Pro Graphics
+[    39.869] (II) modesetting: Driver for Modesetting Kernel Drivers: kms
+[    39.869] (II) FBDEV: driver for framebuffer: fbdev
+[    39.869] (II) VESA: driver for VESA chipsets: vesa
+[    39.869] xf86EnableIOPorts: failed to set IOPL for I/O (Operation not permitted)
+[    39.879] (II) intel(0): Using Kernel Mode Setting driver: i915, version 1.6.0 20180719
+[    39.879] (II) intel(0): SNA compiled: xserver-xorg-video-intel 2:2.99.917+git20180925-2 (Andreas Boll <aboll@debian.org>)
+[    39.879] (II) intel(0): SNA compiled for use with valgrind
+[    39.899] (WW) Falling back to old probe method for modesetting
+[    39.899] (WW) Falling back to old probe method for fbdev
+[    39.899] (II) Loading sub module "fbdevhw"
+[    39.899] (II) LoadModule: "fbdevhw"
+[    39.899] (II) Loading /usr/lib/xorg/modules/libfbdevhw.so
+[    39.907] (II) Module fbdevhw: vendor="X.Org Foundation"
+[    39.907] 	compiled for 1.20.4, module version = 0.0.2
+[    39.907] 	ABI class: X.Org Video Driver, version 24.0
+[    39.907] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[    39.908] (--) intel(0): Integrated Graphics Chipset: Intel(R) G33
+[    39.908] (--) intel(0): CPU: x86-64, sse2, sse3, ssse3; using a maximum of 2 threads
+[    39.908] (II) intel(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[    39.908] (==) intel(0): Depth 24, (--) framebuffer bpp 32
+[    39.908] (==) intel(0): RGB weight 888
+[    39.908] (==) intel(0): Default visual is TrueColor
+[    39.909] (II) intel(0): Output VGA1 has no monitor section
+[    39.909] (II) intel(0): Enabled output VGA1
+[    39.909] (--) intel(0): Using a maximum size of 256x256 for hardware cursors
+[    39.909] (II) intel(0): Output VIRTUAL1 has no monitor section
+[    39.909] (II) intel(0): Enabled output VIRTUAL1
+[    39.909] (--) intel(0): Output VGA1 using initial mode 1280x1024 on pipe 0
+[    39.909] (==) intel(0): TearFree disabled
+[    39.909] (==) intel(0): Using gamma correction (1.0, 1.0, 1.0)
+[    39.909] (==) intel(0): DPI set to (96, 96)
+[    39.909] (II) Loading sub module "dri3"
+[    39.909] (II) LoadModule: "dri3"
+[    39.909] (II) Module "dri3" already built-in
+[    39.909] (II) Loading sub module "dri2"
+[    39.909] (II) LoadModule: "dri2"
+[    39.909] (II) Module "dri2" already built-in
+[    39.909] (II) Loading sub module "present"
+[    39.909] (II) LoadModule: "present"
+[    39.909] (II) Module "present" already built-in
+[    39.910] (II) UnloadModule: "modesetting"
+[    39.910] (II) Unloading modesetting
+[    39.910] (II) UnloadModule: "fbdev"
+[    39.910] (II) Unloading fbdev
+[    39.910] (II) UnloadSubModule: "fbdevhw"
+[    39.910] (II) Unloading fbdevhw
+[    39.910] (II) UnloadModule: "vesa"
+[    39.910] (II) Unloading vesa
+[    39.927] (II) intel(0): SNA initialized with Alviso (gen3) backend
+[    39.927] (==) intel(0): Backing store enabled
+[    39.927] (==) intel(0): Silken mouse enabled
+[    39.931] (II) intel(0): HW Cursor enabled
+[    39.932] (==) intel(0): DPMS enabled
+[    39.932] (==) intel(0): Display hotplug detection enabled
+[    39.941] (II) intel(0): [XvMC] i915_xvmc driver initialized.
+[    39.941] (II) intel(0): [DRI2] Setup complete
+[    39.941] (II) intel(0): [DRI2]   DRI driver: i915
+[    39.941] (II) intel(0): [DRI2]   VDPAU driver: va_gl
+[    39.941] (II) intel(0): direct rendering: DRI2 enabled
+[    39.941] (II) intel(0): hardware support for Present enabled
+[    39.941] (II) Initializing extension Generic Event Extension
+[    39.942] (II) Initializing extension SHAPE
+[    39.942] (II) Initializing extension MIT-SHM
+[    39.942] (II) Initializing extension XInputExtension
+[    39.943] (II) Initializing extension XTEST
+[    39.943] (II) Initializing extension BIG-REQUESTS
+[    39.944] (II) Initializing extension SYNC
+[    39.944] (II) Initializing extension XKEYBOARD
+[    39.944] (II) Initializing extension XC-MISC
+[    39.945] (II) Initializing extension SECURITY
+[    39.945] (II) Initializing extension XFIXES
+[    39.945] (II) Initializing extension RENDER
+[    39.946] (II) Initializing extension RANDR
+[    39.946] (II) Initializing extension COMPOSITE
+[    39.946] (II) Initializing extension DAMAGE
+[    39.947] (II) Initializing extension MIT-SCREEN-SAVER
+[    39.947] (II) Initializing extension DOUBLE-BUFFER
+[    39.947] (II) Initializing extension RECORD
+[    39.948] (II) Initializing extension DPMS
+[    39.948] (II) Initializing extension Present
+[    39.948] (II) Initializing extension DRI3
+[    39.948] (II) Initializing extension X-Resource
+[    39.949] (II) Initializing extension XVideo
+[    39.949] (II) Initializing extension XVideo-MotionCompensation
+[    39.949] (II) Initializing extension SELinux
+[    39.949] (II) SELinux: Disabled on system
+[    39.949] (II) Initializing extension GLX
+[    40.141] (II) AIGLX: Loaded and initialized i915
+[    40.141] (II) GLX: Initialized DRI2 GL provider for screen 0
+[    40.141] (II) Initializing extension XFree86-VidModeExtension
+[    40.141] (II) Initializing extension XFree86-DGA
+[    40.141] (II) Initializing extension XFree86-DRI
+[    40.141] (II) Initializing extension DRI2
+[    40.159] (II) intel(0): switch to mode 1280x1024@75.0 on VGA1 using pipe 0, position (0, 0), rotation normal, reflection none
+[    40.167] (II) intel(0): Setting screen physical size to 338 x 270
+[    40.391] (II) config/udev: Adding input device Power Button (/dev/input/event5)
+[    40.391] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[    40.391] (II) LoadModule: "libinput"
+[    40.391] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[    40.436] (II) Module libinput: vendor="X.Org Foundation"
+[    40.436] 	compiled for 1.20.4, module version = 0.28.2
+[    40.436] 	Module class: X.Org XInput Driver
+[    40.436] 	ABI class: X.Org XInput driver, version 24.1
+[    40.436] (II) Using input driver 'libinput' for 'Power Button'
+[    40.438] (II) systemd-logind: got fd for /dev/input/event5 13:69 fd 20 paused 0
+[    40.438] (**) Power Button: always reports core events
+[    40.438] (**) Option "Device" "/dev/input/event5"
+[    40.439] (**) Option "_source" "server/udev"
+[    40.464] (II) event5  - Power Button: is tagged by udev as: Keyboard
+[    40.464] (II) event5  - Power Button: device is a keyboard
+[    40.465] (II) event5  - Power Button: device removed
+[    40.465] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input8/event5"
+[    40.465] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 6)
+[    40.465] (**) Option "xkb_model" "pc105"
+[    40.465] (**) Option "xkb_layout" "us"
+[    40.466] (II) event5  - Power Button: is tagged by udev as: Keyboard
+[    40.466] (II) event5  - Power Button: device is a keyboard
+[    40.467] (II) config/udev: Adding input device Power Button (/dev/input/event4)
+[    40.467] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[    40.467] (II) Using input driver 'libinput' for 'Power Button'
+[    40.469] (II) systemd-logind: got fd for /dev/input/event4 13:68 fd 23 paused 0
+[    40.469] (**) Power Button: always reports core events
+[    40.469] (**) Option "Device" "/dev/input/event4"
+[    40.469] (**) Option "_source" "server/udev"
+[    40.470] (II) event4  - Power Button: is tagged by udev as: Keyboard
+[    40.470] (II) event4  - Power Button: device is a keyboard
+[    40.471] (II) event4  - Power Button: device removed
+[    40.471] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input7/event4"
+[    40.471] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 7)
+[    40.471] (**) Option "xkb_model" "pc105"
+[    40.471] (**) Option "xkb_layout" "us"
+[    40.472] (II) event4  - Power Button: is tagged by udev as: Keyboard
+[    40.472] (II) event4  - Power Button: device is a keyboard
+[    40.474] (II) config/udev: Adding input device Dell Dell USB Wired Entry Keyboard (/dev/input/event0)
+[    40.474] (**) Dell Dell USB Wired Entry Keyboard: Applying InputClass "libinput keyboard catchall"
+[    40.474] (II) Using input driver 'libinput' for 'Dell Dell USB Wired Entry Keyboard'
+[    40.476] (II) systemd-logind: got fd for /dev/input/event0 13:64 fd 24 paused 0
+[    40.476] (**) Dell Dell USB Wired Entry Keyboard: always reports core events
+[    40.476] (**) Option "Device" "/dev/input/event0"
+[    40.476] (**) Option "_source" "server/udev"
+[    40.478] (II) event0  - Dell Dell USB Wired Entry Keyboard: is tagged by udev as: Keyboard
+[    40.478] (II) event0  - Dell Dell USB Wired Entry Keyboard: device is a keyboard
+[    40.479] (II) event0  - Dell Dell USB Wired Entry Keyboard: device removed
+[    40.479] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.0/usb2/2-2/2-2:1.0/0003:413C:2111.0001/input/input3/event0"
+[    40.479] (II) XINPUT: Adding extended input device "Dell Dell USB Wired Entry Keyboard" (type: KEYBOARD, id 8)
+[    40.479] (**) Option "xkb_model" "pc105"
+[    40.479] (**) Option "xkb_layout" "us"
+[    40.481] (II) event0  - Dell Dell USB Wired Entry Keyboard: is tagged by udev as: Keyboard
+[    40.481] (II) event0  - Dell Dell USB Wired Entry Keyboard: device is a keyboard
+[    40.483] (II) config/udev: Adding input device Dell Dell USB Wired Entry Keyboard Consumer Control (/dev/input/event1)
+[    40.483] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: Applying InputClass "libinput keyboard catchall"
+[    40.483] (II) Using input driver 'libinput' for 'Dell Dell USB Wired Entry Keyboard Consumer Control'
+[    40.485] (II) systemd-logind: got fd for /dev/input/event1 13:65 fd 25 paused 0
+[    40.485] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: always reports core events
+[    40.485] (**) Option "Device" "/dev/input/event1"
+[    40.485] (**) Option "_source" "server/udev"
+[    40.488] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: is tagged by udev as: Keyboard
+[    40.488] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device is a keyboard
+[    40.488] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device removed
+[    40.488] (II) libinput: Dell Dell USB Wired Entry Keyboard Consumer Control: needs a virtual subdevice
+[    40.488] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.0/usb2/2-2/2-2:1.1/0003:413C:2111.0002/input/input4/event1"
+[    40.488] (II) XINPUT: Adding extended input device "Dell Dell USB Wired Entry Keyboard Consumer Control" (type: MOUSE, id 9)
+[    40.488] (**) Option "AccelerationScheme" "none"
+[    40.488] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: (accel) selected scheme none/0
+[    40.488] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: (accel) acceleration factor: 2.000
+[    40.488] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: (accel) acceleration threshold: 4
+[    40.491] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: is tagged by udev as: Keyboard
+[    40.491] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device is a keyboard
+[    40.492] (II) config/udev: Adding input device Dell Dell USB Wired Entry Keyboard System Control (/dev/input/event2)
+[    40.492] (**) Dell Dell USB Wired Entry Keyboard System Control: Applying InputClass "libinput keyboard catchall"
+[    40.492] (II) Using input driver 'libinput' for 'Dell Dell USB Wired Entry Keyboard System Control'
+[    40.494] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 26 paused 0
+[    40.494] (**) Dell Dell USB Wired Entry Keyboard System Control: always reports core events
+[    40.494] (**) Option "Device" "/dev/input/event2"
+[    40.494] (**) Option "_source" "server/udev"
+[    40.496] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: is tagged by udev as: Keyboard
+[    40.497] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device is a keyboard
+[    40.497] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device removed
+[    40.497] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.0/usb2/2-2/2-2:1.1/0003:413C:2111.0002/input/input5/event2"
+[    40.497] (II) XINPUT: Adding extended input device "Dell Dell USB Wired Entry Keyboard System Control" (type: KEYBOARD, id 10)
+[    40.497] (**) Option "xkb_model" "pc105"
+[    40.497] (**) Option "xkb_layout" "us"
+[    40.500] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: is tagged by udev as: Keyboard
+[    40.500] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device is a keyboard
+[    40.501] (II) config/udev: Adding input device Genius Wireless Mouse (/dev/input/event3)
+[    40.501] (**) Genius Wireless Mouse: Applying InputClass "libinput pointer catchall"
+[    40.501] (II) Using input driver 'libinput' for 'Genius Wireless Mouse'
+[    40.559] (II) systemd-logind: got fd for /dev/input/event3 13:67 fd 27 paused 0
+[    40.559] (**) Genius Wireless Mouse: always reports core events
+[    40.559] (**) Option "Device" "/dev/input/event3"
+[    40.559] (**) Option "_source" "server/udev"
+[    40.562] (II) event3  - Genius Wireless Mouse: is tagged by udev as: Mouse
+[    40.562] (II) event3  - Genius Wireless Mouse: device is a pointer
+[    40.562] (II) event3  - Genius Wireless Mouse: device removed
+[    40.563] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.1/usb3/3-2/3-2:1.0/0003:0250:3412.0003/input/input6/event3"
+[    40.563] (II) XINPUT: Adding extended input device "Genius Wireless Mouse" (type: MOUSE, id 11)
+[    40.563] (**) Option "AccelerationScheme" "none"
+[    40.563] (**) Genius Wireless Mouse: (accel) selected scheme none/0
+[    40.563] (**) Genius Wireless Mouse: (accel) acceleration factor: 2.000
+[    40.563] (**) Genius Wireless Mouse: (accel) acceleration threshold: 4
+[    40.566] (II) event3  - Genius Wireless Mouse: is tagged by udev as: Mouse
+[    40.566] (II) event3  - Genius Wireless Mouse: device is a pointer
+[    40.568] (II) config/udev: Adding input device Genius Wireless Mouse (/dev/input/mouse0)
+[    40.568] (II) No input driver specified, ignoring this device.
+[    40.568] (II) This device may have been added with another device file.
+[    40.568] (II) config/udev: Adding input device PC Speaker (/dev/input/event6)
+[    40.568] (II) No input driver specified, ignoring this device.
+[    40.568] (II) This device may have been added with another device file.
+[    40.582] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: Applying InputClass "libinput keyboard catchall"
+[    40.582] (II) Using input driver 'libinput' for 'Dell Dell USB Wired Entry Keyboard Consumer Control'
+[    40.582] (II) systemd-logind: returning pre-existing fd for /dev/input/event1 13:65
+[    40.582] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: always reports core events
+[    40.582] (**) Option "Device" "/dev/input/event1"
+[    40.582] (**) Option "_source" "_driver/libinput"
+[    40.582] (II) libinput: Dell Dell USB Wired Entry Keyboard Consumer Control: is a virtual subdevice
+[    40.582] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.0/usb2/2-2/2-2:1.1/0003:413C:2111.0002/input/input4/event1"
+[    40.582] (II) XINPUT: Adding extended input device "Dell Dell USB Wired Entry Keyboard Consumer Control" (type: KEYBOARD, id 12)
+[    40.582] (**) Option "xkb_model" "pc105"
+[    40.582] (**) Option "xkb_layout" "us"
+[    41.935] (II) intel(0): EDID vendor "CND", prod id 0
+[    41.935] (II) intel(0): DDCModeFromDetailedTiming: Ignoring: We don't handle stereo.
+[    41.935] (II) intel(0): Using EDID range info for horizontal sync
+[    41.935] (II) intel(0): Using EDID range info for vertical refresh
+[    41.935] (II) intel(0): Printing DDC gathered Modelines:
+[    41.935] (II) intel(0): Modeline "800x600"x0.0   40.00  800 840 968 1056  600 601 605 628 +hsync +vsync (37.9 kHz e)
+[    41.935] (II) intel(0): Modeline "640x480"x0.0   31.50  640 656 720 840  480 481 484 500 -hsync -vsync (37.5 kHz e)
+[    41.935] (II) intel(0): Modeline "640x480"x0.0   31.50  640 664 704 832  480 489 492 520 -hsync -vsync (37.9 kHz e)
+[    41.935] (II) intel(0): Modeline "640x480"x0.0   25.18  640 656 752 800  480 490 492 525 -hsync -vsync (31.5 kHz e)
+[    41.935] (II) intel(0): Modeline "720x400"x0.0   28.32  720 738 846 900  400 412 414 449 -hsync +vsync (31.5 kHz e)
+[    41.936] (II) intel(0): Modeline "1280x1024"x0.0  135.00  1280 1296 1440 1688  1024 1025 1028 1066 +hsync +vsync (80.0 kHz e)
+[    41.936] (II) intel(0): Modeline "1024x768"x0.0   78.75  1024 1040 1136 1312  768 769 772 800 +hsync +vsync (60.0 kHz e)
+[    41.936] (II) intel(0): Modeline "1024x768"x0.0   75.00  1024 1048 1184 1328  768 771 777 806 -hsync -vsync (56.5 kHz e)
+[    41.936] (II) intel(0): Modeline "1024x768"x0.0   65.00  1024 1048 1184 1344  768 771 777 806 -hsync -vsync (48.4 kHz e)
+[    41.936] (II) intel(0): Modeline "800x600"x0.0   49.50  800 816 896 1056  600 601 604 625 +hsync +vsync (46.9 kHz e)
+[    41.936] (II) intel(0): Modeline "800x600"x0.0   50.00  800 856 976 1040  600 637 643 666 +hsync +vsync (48.1 kHz e)

@@ -1,0 +1,405 @@
+[  2740.709] 
+X.Org X Server 1.20.4
+X Protocol Version 11, Revision 0
+[  2740.709] Build Operating System: Linux 5.10.0-10-amd64 x86_64 Debian
+[  2740.709] Current Operating System: Linux debian 4.19.0-21-amd64 #1 SMP Debian 4.19.249-2 (2022-06-30) x86_64
+[  2740.710] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.19.0-21-amd64 root=UUID=881c2556-ccc4-4a89-81aa-410579e122bb ro quiet
+[  2740.710] Build Date: 18 December 2021  09:05:36AM
+[  2740.710] xorg-server 2:1.20.4-1+deb10u4 (https://www.debian.org/support) 
+[  2740.710] Current version of pixman: 0.36.0
+[  2740.710] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[  2740.710] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[  2740.711] (==) Log file: "/home/dexter/.local/share/xorg/Xorg.0.log", Time: Sat Jul 23 19:18:32 2022
+[  2740.720] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[  2740.721] (==) No Layout section.  Using the first Screen section.
+[  2740.721] (==) No screen section available. Using defaults.
+[  2740.721] (**) |-->Screen "Default Screen Section" (0)
+[  2740.721] (**) |   |-->Monitor "<default monitor>"
+[  2740.721] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[  2740.721] (==) Automatically adding devices
+[  2740.721] (==) Automatically enabling devices
+[  2740.721] (==) Automatically adding GPU devices
+[  2740.721] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[  2740.721] (WW) The directory "/usr/share/fonts/X11/cyrillic" does not exist.
+[  2740.721] 	Entry deleted from font path.
+[  2740.721] (WW) The directory "/usr/share/fonts/X11/100dpi/" does not exist.
+[  2740.721] 	Entry deleted from font path.
+[  2740.721] (WW) The directory "/usr/share/fonts/X11/75dpi/" does not exist.
+[  2740.721] 	Entry deleted from font path.
+[  2740.721] (WW) The directory "/usr/share/fonts/X11/Type1" does not exist.
+[  2740.721] 	Entry deleted from font path.
+[  2740.721] (WW) The directory "/usr/share/fonts/X11/100dpi" does not exist.
+[  2740.721] 	Entry deleted from font path.
+[  2740.721] (WW) The directory "/usr/share/fonts/X11/75dpi" does not exist.
+[  2740.722] 	Entry deleted from font path.
+[  2740.722] (==) FontPath set to:
+	/usr/share/fonts/X11/misc,
+	built-ins
+[  2740.722] (==) ModulePath set to "/usr/lib/xorg/modules"
+[  2740.722] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[  2740.722] (II) Loader magic: 0x559fc8de3e20
+[  2740.722] (II) Module ABI versions:
+[  2740.722] 	X.Org ANSI C Emulation: 0.4
+[  2740.722] 	X.Org Video Driver: 24.0
+[  2740.722] 	X.Org XInput driver : 24.1
+[  2740.722] 	X.Org Server Extension : 10.0
+[  2740.723] (++) using VT number 1
+
+[  2740.725] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[  2740.726] (II) xfree86: Adding drm device (/dev/dri/card0)
+[  2740.727] (II) systemd-logind: got fd for /dev/dri/card0 226:0 fd 11 paused 0
+[  2740.730] (--) PCI:*(0@0:2:0) 8086:29c2:8086:29c2 rev 16, Mem @ 0xfea80000/524288, 0xd0000000/268435456, 0xfe900000/1048576, I/O @ 0x0000dc00/8, BIOS @ 0x????????/131072
+[  2740.730] (II) LoadModule: "glx"
+[  2740.731] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[  2740.772] (II) Module glx: vendor="X.Org Foundation"
+[  2740.772] 	compiled for 1.20.4, module version = 1.0.0
+[  2740.772] 	ABI class: X.Org Server Extension, version 10.0
+[  2740.772] (==) Matched intel as autoconfigured driver 0
+[  2740.772] (==) Matched modesetting as autoconfigured driver 1
+[  2740.772] (==) Matched fbdev as autoconfigured driver 2
+[  2740.772] (==) Matched vesa as autoconfigured driver 3
+[  2740.772] (==) Assigned the driver to the xf86ConfigLayout
+[  2740.772] (II) LoadModule: "intel"
+[  2740.772] (II) Loading /usr/lib/xorg/modules/drivers/intel_drv.so
+[  2740.779] (II) Module intel: vendor="X.Org Foundation"
+[  2740.779] 	compiled for 1.20.1, module version = 2.99.917
+[  2740.779] 	Module class: X.Org Video Driver
+[  2740.779] 	ABI class: X.Org Video Driver, version 24.0
+[  2740.779] (II) LoadModule: "modesetting"
+[  2740.780] (II) Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+[  2740.780] (II) Module modesetting: vendor="X.Org Foundation"
+[  2740.780] 	compiled for 1.20.4, module version = 1.20.4
+[  2740.780] 	Module class: X.Org Video Driver
+[  2740.780] 	ABI class: X.Org Video Driver, version 24.0
+[  2740.780] (II) LoadModule: "fbdev"
+[  2740.780] (II) Loading /usr/lib/xorg/modules/drivers/fbdev_drv.so
+[  2740.780] (II) Module fbdev: vendor="X.Org Foundation"
+[  2740.780] 	compiled for 1.20.0, module version = 0.5.0
+[  2740.780] 	Module class: X.Org Video Driver
+[  2740.780] 	ABI class: X.Org Video Driver, version 24.0
+[  2740.780] (II) LoadModule: "vesa"
+[  2740.780] (II) Loading /usr/lib/xorg/modules/drivers/vesa_drv.so
+[  2740.780] (II) Module vesa: vendor="X.Org Foundation"
+[  2740.780] 	compiled for 1.20.1, module version = 2.4.0
+[  2740.780] 	Module class: X.Org Video Driver
+[  2740.780] 	ABI class: X.Org Video Driver, version 24.0
+[  2740.780] (II) intel: Driver for Intel(R) Integrated Graphics Chipsets:
+	i810, i810-dc100, i810e, i815, i830M, 845G, 854, 852GM/855GM, 865G,
+	915G, E7221 (i915), 915GM, 945G, 945GM, 945GME, Pineview GM,
+	Pineview G, 965G, G35, 965Q, 946GZ, 965GM, 965GME/GLE, G33, Q35, Q33,
+	GM45, 4 Series, G45/G43, Q45/Q43, G41, B43
+[  2740.781] (II) intel: Driver for Intel(R) HD Graphics
+[  2740.781] (II) intel: Driver for Intel(R) Iris(TM) Graphics
+[  2740.781] (II) intel: Driver for Intel(R) Iris(TM) Pro Graphics
+[  2740.781] (II) modesetting: Driver for Modesetting Kernel Drivers: kms
+[  2740.781] (II) FBDEV: driver for framebuffer: fbdev
+[  2740.781] (II) VESA: driver for VESA chipsets: vesa
+[  2740.781] xf86EnableIOPorts: failed to set IOPL for I/O (Operation not permitted)
+[  2740.781] (II) intel(0): Using Kernel Mode Setting driver: i915, version 1.6.0 20180719
+[  2740.781] (II) intel(0): SNA compiled: xserver-xorg-video-intel 2:2.99.917+git20180925-2 (Andreas Boll <aboll@debian.org>)
+[  2740.781] (II) intel(0): SNA compiled for use with valgrind
+[  2740.798] (WW) Falling back to old probe method for modesetting
+[  2740.798] (WW) Falling back to old probe method for fbdev
+[  2740.798] (II) Loading sub module "fbdevhw"
+[  2740.798] (II) LoadModule: "fbdevhw"
+[  2740.798] (II) Loading /usr/lib/xorg/modules/libfbdevhw.so
+[  2740.798] (II) Module fbdevhw: vendor="X.Org Foundation"
+[  2740.798] 	compiled for 1.20.4, module version = 0.0.2
+[  2740.798] 	ABI class: X.Org Video Driver, version 24.0
+[  2740.799] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[  2740.799] (--) intel(0): Integrated Graphics Chipset: Intel(R) G33
+[  2740.799] (--) intel(0): CPU: x86-64, sse2, sse3, ssse3; using a maximum of 2 threads
+[  2740.799] (II) intel(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[  2740.799] (==) intel(0): Depth 24, (--) framebuffer bpp 32
+[  2740.799] (==) intel(0): RGB weight 888
+[  2740.799] (==) intel(0): Default visual is TrueColor
+[  2740.800] (II) intel(0): Output VGA1 has no monitor section
+[  2740.800] (II) intel(0): Enabled output VGA1
+[  2740.800] (--) intel(0): Using a maximum size of 256x256 for hardware cursors
+[  2740.800] (II) intel(0): Output VIRTUAL1 has no monitor section
+[  2740.800] (II) intel(0): Enabled output VIRTUAL1
+[  2740.800] (--) intel(0): Output VGA1 using initial mode 1280x1024 on pipe 0
+[  2740.800] (==) intel(0): TearFree disabled
+[  2740.800] (==) intel(0): Using gamma correction (1.0, 1.0, 1.0)
+[  2740.800] (==) intel(0): DPI set to (96, 96)
+[  2740.800] (II) Loading sub module "dri3"
+[  2740.800] (II) LoadModule: "dri3"
+[  2740.800] (II) Module "dri3" already built-in
+[  2740.800] (II) Loading sub module "dri2"
+[  2740.800] (II) LoadModule: "dri2"
+[  2740.800] (II) Module "dri2" already built-in
+[  2740.800] (II) Loading sub module "present"
+[  2740.800] (II) LoadModule: "present"
+[  2740.800] (II) Module "present" already built-in
+[  2740.800] (II) UnloadModule: "modesetting"
+[  2740.800] (II) Unloading modesetting
+[  2740.801] (II) UnloadModule: "fbdev"
+[  2740.801] (II) Unloading fbdev
+[  2740.801] (II) UnloadSubModule: "fbdevhw"
+[  2740.801] (II) Unloading fbdevhw
+[  2740.801] (II) UnloadModule: "vesa"
+[  2740.801] (II) Unloading vesa
+[  2740.801] (II) intel(0): SNA initialized with Alviso (gen3) backend
+[  2740.801] (==) intel(0): Backing store enabled
+[  2740.801] (==) intel(0): Silken mouse enabled
+[  2740.801] (II) intel(0): HW Cursor enabled
+[  2740.801] (==) intel(0): DPMS enabled
+[  2740.801] (==) intel(0): Display hotplug detection enabled
+[  2740.801] (II) intel(0): [XvMC] i915_xvmc driver initialized.
+[  2740.801] (II) intel(0): [DRI2] Setup complete
+[  2740.801] (II) intel(0): [DRI2]   DRI driver: i915
+[  2740.801] (II) intel(0): [DRI2]   VDPAU driver: va_gl
+[  2740.801] (II) intel(0): direct rendering: DRI2 enabled
+[  2740.801] (II) intel(0): hardware support for Present enabled
+[  2740.802] (II) Initializing extension Generic Event Extension
+[  2740.802] (II) Initializing extension SHAPE
+[  2740.802] (II) Initializing extension MIT-SHM
+[  2740.802] (II) Initializing extension XInputExtension
+[  2740.803] (II) Initializing extension XTEST
+[  2740.803] (II) Initializing extension BIG-REQUESTS
+[  2740.803] (II) Initializing extension SYNC
+[  2740.804] (II) Initializing extension XKEYBOARD
+[  2740.804] (II) Initializing extension XC-MISC
+[  2740.804] (II) Initializing extension SECURITY
+[  2740.805] (II) Initializing extension XFIXES
+[  2740.805] (II) Initializing extension RENDER
+[  2740.805] (II) Initializing extension RANDR
+[  2740.806] (II) Initializing extension COMPOSITE
+[  2740.806] (II) Initializing extension DAMAGE
+[  2740.806] (II) Initializing extension MIT-SCREEN-SAVER
+[  2740.807] (II) Initializing extension DOUBLE-BUFFER
+[  2740.807] (II) Initializing extension RECORD
+[  2740.807] (II) Initializing extension DPMS
+[  2740.808] (II) Initializing extension Present
+[  2740.808] (II) Initializing extension DRI3
+[  2740.808] (II) Initializing extension X-Resource
+[  2740.808] (II) Initializing extension XVideo
+[  2740.809] (II) Initializing extension XVideo-MotionCompensation
+[  2740.809] (II) Initializing extension SELinux
+[  2740.809] (II) SELinux: Disabled on system
+[  2740.809] (II) Initializing extension GLX
+[  2741.015] (II) AIGLX: Loaded and initialized i915
+[  2741.015] (II) GLX: Initialized DRI2 GL provider for screen 0
+[  2741.015] (II) Initializing extension XFree86-VidModeExtension
+[  2741.016] (II) Initializing extension XFree86-DGA
+[  2741.016] (II) Initializing extension XFree86-DRI
+[  2741.016] (II) Initializing extension DRI2
+[  2741.026] (II) intel(0): switch to mode 1280x1024@75.0 on VGA1 using pipe 0, position (0, 0), rotation normal, reflection none
+[  2741.028] (II) intel(0): Setting screen physical size to 338 x 270
+[  2741.191] (II) config/udev: Adding input device Power Button (/dev/input/event5)
+[  2741.191] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[  2741.191] (II) LoadModule: "libinput"
+[  2741.191] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[  2741.219] (II) Module libinput: vendor="X.Org Foundation"
+[  2741.219] 	compiled for 1.20.4, module version = 0.28.2
+[  2741.219] 	Module class: X.Org XInput Driver
+[  2741.219] 	ABI class: X.Org XInput driver, version 24.1
+[  2741.219] (II) Using input driver 'libinput' for 'Power Button'
+[  2741.221] (II) systemd-logind: got fd for /dev/input/event5 13:69 fd 20 paused 0
+[  2741.221] (**) Power Button: always reports core events
+[  2741.221] (**) Option "Device" "/dev/input/event5"
+[  2741.221] (**) Option "_source" "server/udev"
+[  2741.247] (II) event5  - Power Button: is tagged by udev as: Keyboard
+[  2741.247] (II) event5  - Power Button: device is a keyboard
+[  2741.248] (II) event5  - Power Button: device removed
+[  2741.248] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input8/event5"
+[  2741.248] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 6)
+[  2741.249] (II) event5  - Power Button: is tagged by udev as: Keyboard
+[  2741.249] (II) event5  - Power Button: device is a keyboard
+[  2741.250] (II) config/udev: Adding input device Power Button (/dev/input/event4)
+[  2741.250] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[  2741.250] (II) Using input driver 'libinput' for 'Power Button'
+[  2741.252] (II) systemd-logind: got fd for /dev/input/event4 13:68 fd 23 paused 0
+[  2741.252] (**) Power Button: always reports core events
+[  2741.252] (**) Option "Device" "/dev/input/event4"
+[  2741.252] (**) Option "_source" "server/udev"
+[  2741.253] (II) event4  - Power Button: is tagged by udev as: Keyboard
+[  2741.253] (II) event4  - Power Button: device is a keyboard
+[  2741.253] (II) event4  - Power Button: device removed
+[  2741.253] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input7/event4"
+[  2741.253] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 7)
+[  2741.255] (II) event4  - Power Button: is tagged by udev as: Keyboard
+[  2741.255] (II) event4  - Power Button: device is a keyboard
+[  2741.257] (II) config/udev: Adding input device Dell Dell USB Wired Entry Keyboard (/dev/input/event0)
+[  2741.257] (**) Dell Dell USB Wired Entry Keyboard: Applying InputClass "libinput keyboard catchall"
+[  2741.257] (II) Using input driver 'libinput' for 'Dell Dell USB Wired Entry Keyboard'
+[  2741.258] (II) systemd-logind: got fd for /dev/input/event0 13:64 fd 24 paused 0
+[  2741.258] (**) Dell Dell USB Wired Entry Keyboard: always reports core events
+[  2741.258] (**) Option "Device" "/dev/input/event0"
+[  2741.259] (**) Option "_source" "server/udev"
+[  2741.261] (II) event0  - Dell Dell USB Wired Entry Keyboard: is tagged by udev as: Keyboard
+[  2741.261] (II) event0  - Dell Dell USB Wired Entry Keyboard: device is a keyboard
+[  2741.261] (II) event0  - Dell Dell USB Wired Entry Keyboard: device removed
+[  2741.261] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.0/usb1/1-2/1-2:1.0/0003:413C:2111.0001/input/input3/event0"
+[  2741.261] (II) XINPUT: Adding extended input device "Dell Dell USB Wired Entry Keyboard" (type: KEYBOARD, id 8)
+[  2741.264] (II) event0  - Dell Dell USB Wired Entry Keyboard: is tagged by udev as: Keyboard
+[  2741.264] (II) event0  - Dell Dell USB Wired Entry Keyboard: device is a keyboard
+[  2741.266] (II) config/udev: Adding input device Dell Dell USB Wired Entry Keyboard Consumer Control (/dev/input/event1)
+[  2741.266] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: Applying InputClass "libinput keyboard catchall"
+[  2741.266] (II) Using input driver 'libinput' for 'Dell Dell USB Wired Entry Keyboard Consumer Control'
+[  2741.267] (II) systemd-logind: got fd for /dev/input/event1 13:65 fd 25 paused 0
+[  2741.267] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: always reports core events
+[  2741.267] (**) Option "Device" "/dev/input/event1"
+[  2741.267] (**) Option "_source" "server/udev"
+[  2741.270] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: is tagged by udev as: Keyboard
+[  2741.270] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device is a keyboard
+[  2741.270] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device removed
+[  2741.270] (II) libinput: Dell Dell USB Wired Entry Keyboard Consumer Control: needs a virtual subdevice
+[  2741.270] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.0/usb1/1-2/1-2:1.1/0003:413C:2111.0002/input/input4/event1"
+[  2741.270] (II) XINPUT: Adding extended input device "Dell Dell USB Wired Entry Keyboard Consumer Control" (type: MOUSE, id 9)
+[  2741.270] (**) Option "AccelerationScheme" "none"
+[  2741.270] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: (accel) selected scheme none/0
+[  2741.270] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: (accel) acceleration factor: 2.000
+[  2741.270] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: (accel) acceleration threshold: 4
+[  2741.273] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: is tagged by udev as: Keyboard
+[  2741.273] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device is a keyboard
+[  2741.275] (II) config/udev: Adding input device Dell Dell USB Wired Entry Keyboard System Control (/dev/input/event2)
+[  2741.275] (**) Dell Dell USB Wired Entry Keyboard System Control: Applying InputClass "libinput keyboard catchall"
+[  2741.275] (II) Using input driver 'libinput' for 'Dell Dell USB Wired Entry Keyboard System Control'
+[  2741.276] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 26 paused 0
+[  2741.276] (**) Dell Dell USB Wired Entry Keyboard System Control: always reports core events
+[  2741.276] (**) Option "Device" "/dev/input/event2"
+[  2741.276] (**) Option "_source" "server/udev"
+[  2741.279] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: is tagged by udev as: Keyboard
+[  2741.279] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device is a keyboard
+[  2741.279] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device removed
+[  2741.279] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.0/usb1/1-2/1-2:1.1/0003:413C:2111.0002/input/input5/event2"
+[  2741.279] (II) XINPUT: Adding extended input device "Dell Dell USB Wired Entry Keyboard System Control" (type: KEYBOARD, id 10)
+[  2741.282] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: is tagged by udev as: Keyboard
+[  2741.282] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device is a keyboard
+[  2741.283] (II) config/udev: Adding input device Genius Wireless Mouse (/dev/input/event3)
+[  2741.283] (**) Genius Wireless Mouse: Applying InputClass "libinput pointer catchall"
+[  2741.283] (II) Using input driver 'libinput' for 'Genius Wireless Mouse'
+[  2741.342] (II) systemd-logind: got fd for /dev/input/event3 13:67 fd 27 paused 0
+[  2741.342] (**) Genius Wireless Mouse: always reports core events
+[  2741.342] (**) Option "Device" "/dev/input/event3"
+[  2741.342] (**) Option "_source" "server/udev"
+[  2741.345] (II) event3  - Genius Wireless Mouse: is tagged by udev as: Mouse
+[  2741.345] (II) event3  - Genius Wireless Mouse: device is a pointer
+[  2741.345] (II) event3  - Genius Wireless Mouse: device removed
+[  2741.345] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.1/usb3/3-2/3-2:1.0/0003:0250:3412.0003/input/input6/event3"
+[  2741.346] (II) XINPUT: Adding extended input device "Genius Wireless Mouse" (type: MOUSE, id 11)
+[  2741.346] (**) Option "AccelerationScheme" "none"
+[  2741.346] (**) Genius Wireless Mouse: (accel) selected scheme none/0
+[  2741.346] (**) Genius Wireless Mouse: (accel) acceleration factor: 2.000
+[  2741.346] (**) Genius Wireless Mouse: (accel) acceleration threshold: 4
+[  2741.349] (II) event3  - Genius Wireless Mouse: is tagged by udev as: Mouse
+[  2741.349] (II) event3  - Genius Wireless Mouse: device is a pointer
+[  2741.350] (II) config/udev: Adding input device Genius Wireless Mouse (/dev/input/mouse0)
+[  2741.351] (II) No input driver specified, ignoring this device.
+[  2741.351] (II) This device may have been added with another device file.
+[  2741.351] (II) config/udev: Adding input device PC Speaker (/dev/input/event6)
+[  2741.351] (II) No input driver specified, ignoring this device.
+[  2741.351] (II) This device may have been added with another device file.
+[  2741.363] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: Applying InputClass "libinput keyboard catchall"
+[  2741.363] (II) Using input driver 'libinput' for 'Dell Dell USB Wired Entry Keyboard Consumer Control'
+[  2741.363] (II) systemd-logind: returning pre-existing fd for /dev/input/event1 13:65
+[  2741.363] (**) Dell Dell USB Wired Entry Keyboard Consumer Control: always reports core events
+[  2741.363] (**) Option "Device" "/dev/input/event1"
+[  2741.363] (**) Option "_source" "_driver/libinput"
+[  2741.363] (II) libinput: Dell Dell USB Wired Entry Keyboard Consumer Control: is a virtual subdevice
+[  2741.363] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:1d.0/usb1/1-2/1-2:1.1/0003:413C:2111.0002/input/input4/event1"
+[  2741.363] (II) XINPUT: Adding extended input device "Dell Dell USB Wired Entry Keyboard Consumer Control" (type: KEYBOARD, id 12)
+[  2742.824] (II) intel(0): EDID vendor "CND", prod id 0
+[  2742.824] (II) intel(0): DDCModeFromDetailedTiming: Ignoring: We don't handle stereo.
+[  2742.825] (II) intel(0): Using EDID range info for horizontal sync
+[  2742.825] (II) intel(0): Using EDID range info for vertical refresh
+[  2742.825] (II) intel(0): Printing DDC gathered Modelines:
+[  2742.825] (II) intel(0): Modeline "800x600"x0.0   40.00  800 840 968 1056  600 601 605 628 +hsync +vsync (37.9 kHz e)
+[  2742.825] (II) intel(0): Modeline "640x480"x0.0   31.50  640 656 720 840  480 481 484 500 -hsync -vsync (37.5 kHz e)
+[  2742.825] (II) intel(0): Modeline "640x480"x0.0   31.50  640 664 704 832  480 489 492 520 -hsync -vsync (37.9 kHz e)
+[  2742.825] (II) intel(0): Modeline "640x480"x0.0   25.18  640 656 752 800  480 490 492 525 -hsync -vsync (31.5 kHz e)
+[  2742.825] (II) intel(0): Modeline "720x400"x0.0   28.32  720 738 846 900  400 412 414 449 -hsync +vsync (31.5 kHz e)
+[  2742.825] (II) intel(0): Modeline "1280x1024"x0.0  135.00  1280 1296 1440 1688  1024 1025 1028 1066 +hsync +vsync (80.0 kHz e)
+[  2742.825] (II) intel(0): Modeline "1024x768"x0.0   78.75  1024 1040 1136 1312  768 769 772 800 +hsync +vsync (60.0 kHz e)
+[  2742.825] (II) intel(0): Modeline "1024x768"x0.0   75.00  1024 1048 1184 1328  768 771 777 806 -hsync -vsync (56.5 kHz e)
+[  2742.825] (II) intel(0): Modeline "1024x768"x0.0   65.00  1024 1048 1184 1344  768 771 777 806 -hsync -vsync (48.4 kHz e)
+[  2742.825] (II) intel(0): Modeline "800x600"x0.0   49.50  800 816 896 1056  600 601 604 625 +hsync +vsync (46.9 kHz e)
+[  2742.825] (II) intel(0): Modeline "800x600"x0.0   50.00  800 856 976 1040  600 637 643 666 +hsync +vsync (48.1 kHz e)
+[  2759.852] (**) Option "fd" "20"
+[  2759.852] (II) event5  - Power Button: device removed
+[  2759.853] (**) Option "fd" "23"
+[  2759.853] (II) event4  - Power Button: device removed
+[  2759.853] (**) Option "fd" "24"
+[  2759.853] (II) event0  - Dell Dell USB Wired Entry Keyboard: device removed
+[  2759.853] (**) Option "fd" "25"
+[  2759.853] (**) Option "fd" "26"
+[  2759.853] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device removed
+[  2759.853] (**) Option "fd" "27"
+[  2759.853] (II) event3  - Genius Wireless Mouse: device removed
+[  2759.853] (**) Option "fd" "25"
+[  2759.853] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device removed
+[  2759.853] (II) AIGLX: Suspending AIGLX clients for VT switch
+[  2759.911] (II) systemd-logind: got pause for 13:64
+[  2759.911] (II) systemd-logind: got pause for 226:0
+[  2759.911] (II) systemd-logind: got pause for 13:67
+[  2759.911] (II) systemd-logind: got pause for 13:66
+[  2759.911] (II) systemd-logind: got pause for 13:68
+[  2759.911] (II) systemd-logind: got pause for 13:65
+[  2759.911] (II) systemd-logind: got pause for 13:69
+[  2943.526] (II) systemd-logind: got resume for 13:64
+[  2943.526] (II) systemd-logind: got resume for 226:0
+[  2943.526] (II) AIGLX: Resuming AIGLX clients after VT switch
+[  2943.526] (II) intel(0): switch to mode 1280x1024@75.0 on VGA1 using pipe 0, position (0, 0), rotation normal, reflection none
+[  2943.573] (II) event0  - Dell Dell USB Wired Entry Keyboard: is tagged by udev as: Keyboard
+[  2943.573] (II) event0  - Dell Dell USB Wired Entry Keyboard: device is a keyboard
+[  2943.574] (II) systemd-logind: got resume for 13:67
+[  2943.577] (II) event3  - Genius Wireless Mouse: is tagged by udev as: Mouse
+[  2943.577] (II) event3  - Genius Wireless Mouse: device is a pointer
+[  2943.577] (II) systemd-logind: got resume for 13:66
+[  2943.580] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: is tagged by udev as: Keyboard
+[  2943.580] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device is a keyboard
+[  2943.581] (II) systemd-logind: got resume for 13:68
+[  2943.582] (II) event4  - Power Button: is tagged by udev as: Keyboard
+[  2943.582] (II) event4  - Power Button: device is a keyboard
+[  2943.590] (II) systemd-logind: got resume for 13:65
+[  2943.593] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: is tagged by udev as: Keyboard
+[  2943.593] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device is a keyboard
+[  2943.607] (II) systemd-logind: got resume for 13:69
+[  2943.609] (II) event5  - Power Button: is tagged by udev as: Keyboard
+[  2943.609] (II) event5  - Power Button: device is a keyboard
+[  2958.297] (**) Option "fd" "36"
+[  2958.298] (II) event5  - Power Button: device removed
+[  2958.298] (**) Option "fd" "27"
+[  2958.298] (II) event4  - Power Button: device removed
+[  2958.298] (**) Option "fd" "23"
+[  2958.298] (II) event0  - Dell Dell USB Wired Entry Keyboard: device removed
+[  2958.298] (**) Option "fd" "35"
+[  2958.298] (**) Option "fd" "20"
+[  2958.298] (II) event2  - Dell Dell USB Wired Entry Keyboard System Control: device removed
+[  2958.298] (**) Option "fd" "26"
+[  2958.298] (II) event3  - Genius Wireless Mouse: device removed
+[  2958.298] (**) Option "fd" "35"
+[  2958.298] (II) event1  - Dell Dell USB Wired Entry Keyboard Consumer Control: device removed
+[  2958.298] (II) AIGLX: Suspending AIGLX clients for VT switch
+[  2958.356] (II) systemd-logind: got pause for 13:64
+[  2958.356] (II) systemd-logind: got pause for 226:0
+[  2958.356] (II) systemd-logind: got pause for 13:67
+[  2958.356] (II) systemd-logind: got pause for 13:66
+[  2958.356] (II) systemd-logind: got pause for 13:68
+[  2958.356] (II) systemd-logind: got pause for 13:65
+[  2958.356] (II) systemd-logind: got pause for 13:69
+[  2974.183] (II) UnloadModule: "libinput"
+[  2974.183] (II) systemd-logind: not releasing fd for 13:65, still in use
+[  2974.188] (II) UnloadModule: "libinput"
+[  2974.188] (II) systemd-logind: releasing fd for 13:67
+[  2974.286] (II) UnloadModule: "libinput"
+[  2974.286] (II) systemd-logind: releasing fd for 13:66
+[  2974.314] (II) UnloadModule: "libinput"
+[  2974.314] (II) systemd-logind: releasing fd for 13:65
+[  2974.326] (II) UnloadModule: "libinput"
+[  2974.326] (II) systemd-logind: releasing fd for 13:64
+[  2974.338] (II) UnloadModule: "libinput"
+[  2974.338] (II) systemd-logind: releasing fd for 13:68
+[  2974.359] (II) UnloadModule: "libinput"
+[  2974.377] (II) systemd-logind: releasing fd for 13:69
+[  2974.469] (WW) xf86CloseConsole: KDSETMODE failed: Input/output error
+[  2974.469] (WW) xf86CloseConsole: VT_GETMODE failed: Input/output error
+[  2974.469] (WW) xf86CloseConsole: VT_ACTIVATE failed: Input/output error
+[  2974.470] (II) Server terminated successfully (0). Closing log file.
