@@ -1,8 +1,7 @@
 #!/bin/sh
 
 xrandr --dpi 96
-setbg &
-# xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!
 remaps &
 slstatus &
 
