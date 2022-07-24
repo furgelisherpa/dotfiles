@@ -1,3 +1,0 @@
-#! /usr/bin/bash
-
-dmenu_run -p "Run: "

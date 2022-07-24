@@ -1,0 +1,3 @@
+#! /bin/sh
+
+if [[ -z $(pidof ffmpeg) ]]; then exit; else pkill ffmpeg && notify-send "🛑 recording is stoped"; fi
