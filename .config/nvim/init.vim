@@ -153,6 +153,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " TextEdit might fail if hidden is not set.
  set hidden
 
+" Disable history map
+ map q: <Nop>
+
 " Some servers have issues with backup files
 set nobackup
 set nowritebackup
