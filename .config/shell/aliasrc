@@ -50,13 +50,13 @@ alias \
 
 # Tools
 alias \
-    sourcezsh="source $HOME/.config/zsh/.zshrc" \
-    sourcezenv="source $HOME/.zshenv" \
+    szsh="source $HOME/.config/zsh/.zshrc" \
+    szp="source $HOME/.zprofile" \
 
 # Config files
 alias \
     cf="cd $HOME/.config && ls -lAh" \
     cfv="vim $HOME/.config/nvim/init.vim" \
     cfa="vim $HOME/.config/shell/aliasrc" \
-    cfz="vim $HOME/.config/zsh/.zshrc && sourcezsh" \
-    cfze="vim $HOME/.zshenv && source $HOME/.zshenv" \
+    cfz="vim $HOME/.config/zsh/.zshrc && szsh" \
+    cfp="vim $HOME/.zprofile && szp" \
