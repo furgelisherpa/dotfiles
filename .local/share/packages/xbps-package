@@ -52,6 +52,8 @@ base-devel
 libX11-devel
 libXft-devel
 libXinerama-devel
+libXext
+libXext-devel
 freetype-devel
 fontconfig-devel
 harfbuzz
