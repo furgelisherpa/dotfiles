@@ -1,12 +1,12 @@
-#!/bin/sh
+#! /bin/sh
 
 xrandr --dpi 96
+pulseaudio --start &
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!
 remaps &
-pulseaudio --start &
 slstatus &
 
-autostart="mpd xcompmgr dunst unclutter"
+autostart="xcompmgr dunst unclutter"
 
 for program in $autostart; do
 	pidof -s "$program" || "$program" &
