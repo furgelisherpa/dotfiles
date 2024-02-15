@@ -1,10 +1,13 @@
-local lualine = require("lualine")
+local status_lualine_ok, lualine = pcall(require, "lualine")
+if not status_lualine_ok then
+  return
+end
 
 -- setting up lualine
 lualine.setup({
   options = {
     icons_enabled = true,
-    theme = auto,
+    theme = 'auto',
     component_separators = { left = "|", right = "|" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = {

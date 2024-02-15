@@ -1,4 +1,8 @@
-comment = require("Comment")
+local status_comment_ok, comment = pcall(require, "Comment")
+if not status_comment_ok then
+  return
+end
+
 comment.setup {
   pre_hook = function(ctx)
     local U = require "Comment.utils"
@@ -25,5 +29,16 @@ comment.setup {
       location = location,
     }
   end,
+  padding = true,
+  sticky = true,
+  ignore = nil,
+  opleader = {
+    line = 'gcc',
+    block = 'gbc',
+  },
+  mappings = {
+    basic = true,
+    extra = true,
+  },
+  post_hook = nil,
 }
-

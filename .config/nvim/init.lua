@@ -5,9 +5,6 @@ require("user.keymaps")
 require("user.plugin")
 
 vim.cmd([[
-"colorscheme
-colorscheme kanagawa-dragon
-
 " literally stole from a luke smith's config, lol
 " what it does is 
 " disable automatic commenting on newline

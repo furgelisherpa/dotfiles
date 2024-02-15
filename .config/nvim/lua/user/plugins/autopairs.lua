@@ -1,5 +1,8 @@
 -- Setup nvim-cmp.
-npairs = require("nvim-autopairs")
+local status_npairs_ok, npairs = pcall(require, "nvim-autopairs")
+if not status_npairs_ok then
+  return
+end
 
 npairs.setup {
   check_ts = true,

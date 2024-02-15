@@ -1,4 +1,8 @@
-local treesitter = require('nvim-treesitter.configs')
+local status_treesitter_ok, treesitter = pcall(require, 'nvim-treesitter.configs')
+if not status_treesitter_ok then
+  return
+end
+
 treesitter.setup({
   ensure_installed = {
     'bash',
@@ -15,12 +19,12 @@ treesitter.setup({
     'markdown',
     'markdown_inline',
   },
-  sync_install = false,
+  sync_install = true,
   auto_install = true,
   highlight = {
     enable = true,
-    disable = { 'latex' },
-    additional_vim_regex_highlighting = true,
+    disable = { '' },
+    additional_vim_regex_highlighting = { 'markdown' },
   },
   autotag = {
     enable = true,

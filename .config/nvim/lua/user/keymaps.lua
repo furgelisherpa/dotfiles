@@ -1,9 +1,6 @@
 -- File Browser
 vim.keymap.set("n", "<leader>of", "<cmd>NvimTreeToggle<cr>", { noremap=true, silent=true, desc="Toggle file browser" })
 
--- Paste without lossing yanked buffer
-vim.keymap.set("n", "<leader>p", "\"_dP", { noremap=true, silent=true, desc="Paste without loosing data" })
-
 -- Nvim Config file
 vim.keymap.set("n", "<leader>c", "<cmd>tabe $MYVIMRC<cr>", { noremap=true, silent=true, desc="Edit a config file" })
 
@@ -22,11 +19,7 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap=true, silent=true, desc="Move r
 
 -- Terminal
 vim.keymap.set("t", "<C-x>", "<C-\\><C-n>", { noremap=true, silent=true, desc="Escape terminal mode" })
-vim.keymap.set("n", "<leader>t", "<cmd>15sp term://bash | startinsert<cr>", { noremap=true, silent=true, desc="Open a terminal window" })
-
--- Compile Latex Files
-vim.keymap.set("n", "<leader>lc", "<cmd>!lualatex % && rm -f *.aux *.log<cr>", { noremap=true, silent=true, desc="Compile latex file" })
-vim.keymap.set("n", "<leader>lp", "<cmd>!setsid -f zathura $(echo % | sed 's/tex$/pdf/')<cr>", { noremap=true, silent=true, desc="preview latex files" })
+vim.keymap.set("n", "<leader>ot", "<cmd>15sp term://bash | startinsert<cr>", { noremap=true, silent=true, desc="Open a terminal window" })
 
 -- Create New empty window
 vim.keymap.set("n", "<leader>sn", "<cmd>new<cr>", { noremap=true, silent=true, desc="Create new empty split window" })

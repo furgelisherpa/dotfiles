@@ -104,47 +104,44 @@ return require('packer').startup(function(use)
   }
 
   -- Colorscheme
-  use "rebelot/kanagawa.nvim"
-
-  -- Lsp-Zero
   use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    requires = {
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
-
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'L3MON4D3/LuaSnip'},
-    },
-    config = function() require('user.plugins.lsp-zero') end
+    "rebelot/kanagawa.nvim",
+    config = function() require("user.plugins.colorscheme") end 
   }
 
-  -- Latex
-  use {
-    'lervag/vimtex',
-    config = function() 
-      vim.gavimtex_syntax_enabled = 0
-      vim.api.nvim_set_var('vimtex_compiler_latexmk_engines', {
-        _ = '-pdflatex',
-        pdflatex = '-pdflatex',
-        xelatex = '-xelatex',
-        lualatex = '-lualatex',
-      })
+    -- Lsp-Zero
+    use {
+      "VonHeikemen/lsp-zero.nvim",
+      branch = "v3.x",
+      requires = {
+        {"williamboman/mason.nvim"},
+        {"williamboman/mason-lspconfig.nvim"},
+
+        -- LSP Support
+        {"neovim/nvim-lspconfig"},
+        -- Autocompletion
+        {"hrsh7th/nvim-cmp"},
+        {"hrsh7th/cmp-nvim-lsp"},
+        {"L3MON4D3/LuaSnip"},
+      },
+      config = function() require("user.plugins.lsp-zero") end
+    }
+
+    -- Latex
+    use {
+      "lervag/vimtex",
+      config = function()
+        vim.g.gavimtex_syntax_enabled = 0
+        vim.g.vimtex_view_method = 'zathura'
+        vim.g.vim_compiler_method = 'latexrun'
+        vim.g.maplocalleader = ','
+      end
+    }
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+      require('packer').sync()
     end
-  }
-
-  -- Vimwiki
-  use 'vimwiki/vimwiki'
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+  end)
 
