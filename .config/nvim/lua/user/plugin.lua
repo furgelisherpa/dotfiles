@@ -74,7 +74,12 @@ return require('packer').startup(function(use)
       require('nvim-tree').setup {
         filters = {
           dotfiles = false
-        }
+        },
+        vim.keymap.set(
+        'n',
+        '<leader>of',
+        '<cmd>NvimTreeToggle<cr>',
+        { noremap=true, silent=true, desc='Toggle file browser' })
       }
     end
   }
@@ -87,55 +92,67 @@ return require('packer').startup(function(use)
 
   -- Comment
   use {
-    "numToStr/Comment.nvim",
-    config = function() require("user.plugins.comment") end
+    'numToStr/Comment.nvim',
+    config = function() require('user.plugins.comment') end
   }
 
   -- Gitsigns
   use {
-    "lewis6991/gitsigns.nvim",
-    config = function() require("user.plugins.gitsigns") end
+    'lewis6991/gitsigns.nvim',
+    config = function() require('user.plugins.gitsigns') end
   }
 
   -- Lualine
   use {
-    "nvim-lualine/lualine.nvim",
-    config = function() require("user.plugins.lualine") end
+    'nvim-lualine/lualine.nvim',
+    config = function() require('user.plugins.lualine') end
   }
 
   -- Colorscheme
   use {
-    "rebelot/kanagawa.nvim",
-    config = function() require("user.plugins.colorscheme") end 
+    'rebelot/kanagawa.nvim',
+    config = function() require('user.plugins.colorscheme') end
   }
 
     -- Lsp-Zero
     use {
-      "VonHeikemen/lsp-zero.nvim",
-      branch = "v3.x",
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v3.x',
       requires = {
-        {"williamboman/mason.nvim"},
-        {"williamboman/mason-lspconfig.nvim"},
+        {'williamboman/mason.nvim'},
+        {'williamboman/mason-lspconfig.nvim'},
 
         -- LSP Support
-        {"neovim/nvim-lspconfig"},
+        {'neovim/nvim-lspconfig'},
         -- Autocompletion
-        {"hrsh7th/nvim-cmp"},
-        {"hrsh7th/cmp-nvim-lsp"},
-        {"L3MON4D3/LuaSnip"},
+        {'hrsh7th/nvim-cmp'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'L3MON4D3/LuaSnip'},
       },
-      config = function() require("user.plugins.lsp-zero") end
+      config = function() require('user.plugins.lsp-zero') end
     }
 
     -- Latex
     use {
-      "lervag/vimtex",
+      'lervag/vimtex',
       config = function()
         vim.g.gavimtex_syntax_enabled = 0
         vim.g.vimtex_view_method = 'zathura'
         vim.g.vim_compiler_method = 'latexrun'
         vim.g.maplocalleader = ','
       end
+    }
+
+    --Telescope
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.5',
+      config = function () require('user.plugins.telescope') end
+    }
+
+    -- trouble
+    use {
+      'folke/trouble.nvim',
+      config = function() require('user.plugins.trouble') end
     }
 
     -- Automatically set up your configuration after cloning packer.nvim

@@ -66,4 +66,3 @@ vim.opt.termguicolors = true
 
 -- disable mouse
 vim.opt.mouse = ""
-
