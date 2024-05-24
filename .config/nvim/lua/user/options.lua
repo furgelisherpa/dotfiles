@@ -63,6 +63,7 @@ vim.opt.foldnestmax = 10
 
 -- appearance
 vim.opt.termguicolors = true
+vim.opt.laststatus = 3
 
 -- disable mouse
 vim.opt.mouse = ""
