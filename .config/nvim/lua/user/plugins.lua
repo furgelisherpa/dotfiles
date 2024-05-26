@@ -67,10 +67,10 @@ return require('packer').startup(function(use)
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = {
+          'vim', 'vimdoc',
           'org', 'markdown',
           'css', 'html',
           'lua', 'go',
-          'vim', 'vimdoc',
           'bash', 'c',
         },
         sync_install = true,
@@ -217,6 +217,8 @@ return require('packer').startup(function(use)
   -- fuzzy finder
   use {
     'ibhagwan/fzf-lua',
+    requires = "junegunn/fzf",
+    run = "./install --bin",
     config = function ()
       require('fzf-lua').setup {
         winopts = {
