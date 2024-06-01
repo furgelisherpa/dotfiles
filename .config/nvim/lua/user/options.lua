@@ -2,7 +2,7 @@
 vim.opt.compatible = false
 
 -- disable a intro
-vim.opt.shortmess:append('I')
+vim.opt.shortmess:append 'I'
 
 -- use blinking block cursor in insert mode
 vim.opt.guicursor = 'n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor'
@@ -67,3 +67,14 @@ vim.opt.laststatus = 3
 
 -- disable mouse
 vim.opt.mouse = ""
+
+-- timeout
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300
+
+-- auto remove comment in 'o' "O"
+vim.opt.formatoptions:remove({ "c", "r", "o" })
+
+-- hyphenated words recognized by searches
+vim.opt.iskeyword:append "-"
+

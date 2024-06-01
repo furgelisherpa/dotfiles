@@ -1,23 +1,17 @@
--- Author: CoffeeWise
-
-require("user.options")
-require("user.keymaps")
-require("user.plugins")
-
-vim.cmd([[
-" took from lukesmith's neovim config
-" disable automatic comment on newline
-augroup RemoveFormatOptions
-autocmd!
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-augroup END
-
-" disable linenumbers in terminal mode
-autocmd TermOpen * setlocal nonu nornu
-
-" transparent background
-" augroup user_colors
-" autocmd!
-" autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-" augroup END
-]])
+require('user.options')
+require('user.keymaps')
+require('user.plugins')
+require('user.autopairs')
+require('user.comment')
+require('user.lualine')
+require('user.colorscheme')
+require('user.luatab')
+require('user.toggleterm')
+require('user.project')
+require('user.whichkey')
+require('user.telescope')
+require('user.gitsigns')
+require('user.treesitter')
+require('user.nvimtree')
+require('user.cmp')
+require('user.lsp')
