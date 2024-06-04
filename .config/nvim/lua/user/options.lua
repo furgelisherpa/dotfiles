@@ -78,3 +78,5 @@ vim.opt.formatoptions:remove({ "c", "r", "o" })
 -- hyphenated words recognized by searches
 vim.opt.iskeyword:append "-"
 
+-- clean
+vim.opt.conceallevel = 2

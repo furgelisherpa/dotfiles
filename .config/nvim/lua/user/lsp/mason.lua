@@ -2,7 +2,7 @@ local servers = {
 	"lua_ls",
 	"clangd",
   "gopls",
-  "marksman"
+  "marksman",
 }
 
 local settings = {

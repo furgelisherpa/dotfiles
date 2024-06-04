@@ -15,6 +15,7 @@ ts.setup {
   ensure_installed = {
     'vim', 'vimdoc',
     'org', 'markdown',
+    'markdown_inline',
     'css', 'html',
     'lua', 'go',
     'bash', 'c',
