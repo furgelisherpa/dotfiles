@@ -1,7 +1,7 @@
 ;; disable ring-bell
 (setq ring-bell-function 'ignore)2
 ;; default font
-(set-face-attribute 'default nil :font "UbuntuMono Nerd Font" :height 200)
+(set-face-attribute 'default nil :font "ComicShannsMono Nerd Font" :height 200)
 ;; disable menubar
 (menu-bar-mode -1)
 ;; disable toolbar
