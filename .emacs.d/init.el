@@ -1,5 +1,7 @@
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message "")
 ;; disable ring-bell
-(setq ring-bell-function 'ignore)2
+(setq ring-bell-function 'ignore)
 ;; default font
 (set-face-attribute 'default nil :font "ComicShannsMono Nerd Font" :height 200)
 ;; disable menubar
@@ -12,7 +14,8 @@
 (global-display-line-numbers-mode)
 ;; set the format for displaying line numbers
 (setq display-line-numbers-type 'relative)
-
+;; completition
+(ido-mode 1)
 ;; set per-save backup
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup/per-save")))
 
@@ -31,8 +34,8 @@
 (require 'package)
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("org" . "https://orgmode.org/elpa/")))
+      ("melpa" . "https://melpa.org/packages/")
+      ("org" . "https://orgmode.org/elpa/")))
 (package-initialize)
 
 ;; install use-package
