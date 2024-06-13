@@ -51,7 +51,7 @@ local opts = {
 
 local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["x"] = { "<cmd>!chmod +x %", "Make Executable" },
+  ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
 
   f = {
     name = "Find",
