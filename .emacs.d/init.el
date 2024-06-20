@@ -37,7 +37,8 @@
 ;; credit: yorickvP on Github
 (setq wl-copy-process nil)
 (defun wl-copy (text)
-  (setq wl-copy-process (make-process :name "wl-copy"
+  (setq wl-copy-process 
+        (make-process :name "wl-copy"
                                       :buffer nil
                                       :command '("wl-copy" "-f" "-n")
                                       :connection-type 'pipe
@@ -54,16 +55,12 @@
 ;; if selection-mode replace with type text
 (delete-selection-mode)
 
-;; Load the theme file
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(enable-theme 'kanagawa)
-
 ;; installing package manager
 (require 'package)
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/")
-      ("melpa" . "https://melpa.org/packages/")
-      ("org" . "https://orgmode.org/elpa/")))
+        ("melpa" . "https://melpa.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")))
 
 (package-initialize)
 
@@ -87,3 +84,19 @@
   (setq-default pdf-view-display-size 'fit-width)
   (setq pdf-view-continuous t)
   (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1))))
+
+;; git
+(use-package magit
+  :ensure t)
+
+;; darker theme
+(use-package srcery-theme
+  :ensure t
+  :config
+  (load-theme 'srcery t))
+
+;; disable mouse
+(use-package disable-mouse
+  :ensure t
+  :config
+  (global-disable-mouse-mode))
