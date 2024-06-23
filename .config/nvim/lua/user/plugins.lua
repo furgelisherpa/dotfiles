@@ -77,9 +77,6 @@ return require('packer').startup(function(use)
 	-- telescope
 	use { 'nvim-telescope/telescope.nvim' }
 
-  -- gitsigns
-  use { 'lewis6991/gitsigns.nvim'}
-
   -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -90,7 +87,7 @@ return require('packer').startup(function(use)
   }
 
   -- file browser
-  use { 
+  use {
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons' }
   }
@@ -113,6 +110,7 @@ return require('packer').startup(function(use)
   use { 'williamboman/mason-lspconfig.nvim' }
   use { 'RRethy/vim-illuminate' }
 
+  -- markdown preview
   use {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
