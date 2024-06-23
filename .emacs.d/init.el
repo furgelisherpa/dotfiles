@@ -39,21 +39,27 @@
 (defun wl-copy (text)
   (setq wl-copy-process 
         (make-process :name "wl-copy"
-                                      :buffer nil
-                                      :command '("wl-copy" "-f" "-n")
-                                      :connection-type 'pipe
-                                      :noquery t))
+                      :buffer nil
+                      :command '("wl-copy" "-f" "-n")
+                      :connection-type 'pipe
+                      :noquery t))
   (process-send-string wl-copy-process text)
   (process-send-eof wl-copy-process))
 (defun wl-paste ()
   (if (and wl-copy-process (process-live-p wl-copy-process))
-      nil ; should return nil if we're the current paste owner
-      (shell-command-to-string "wl-paste -n | tr -d \r")))
+    nil ; should return nil if we're the current paste owner
+    (shell-command-to-string "wl-paste -n | tr -d \r")))
 (setq interprogram-cut-function 'wl-copy)
 (setq interprogram-paste-function 'wl-paste)
 
 ;; if selection-mode replace with type text
 (delete-selection-mode)
+
+;; zoom in/zoom out
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
 
 ;; installing package manager
 (require 'package)
@@ -69,34 +75,69 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; disable mouse
+(use-package disable-mouse
+             :ensure t
+             :config
+             (global-disable-mouse-mode))
+
 ;; pdf-viewer
 (use-package pdf-tools
-  :ensure t
-  :config
-  (pdf-tools-install)
-  (setq-default pdf-view-display-size 'fit-width)
-  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
-  (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
-  (add-hook 'pdf-view-mode-
-	  (lambda ()
-              (pdf-view-midnight-minor-mode)
-              (setq pdf-view-midnight-colors '("#ffffff" . "#000000")))) ;; White text on black background
-  (setq-default pdf-view-display-size 'fit-width)
-  (setq pdf-view-continuous t)
-  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1))))
+             :ensure t
+             :defer t
+             :commands (pdf-loader-install)
+             :mode "\\.pdf\\'"
+             :bind (:map pdf-view-mode-map
+                         ("j" . pdf-view-next-line-or-next-page)
+                         ("k" . pdf-view-previous-line-or-previous-page)
+                         ("C-=" . pdf-view-enlarge)
+                         ("C--" . pdf-view-shrink))
+             :init (pdf-loader-install)
+             :config (add-to-list 'revert-without-query ".pdf"))
+
+(add-hook 'pdf-view-mode-hook #'(lambda () (interactive) (display-line-numbers-mode -1)
+                                  (blink-cursor-mode -1)))
 
 ;; git
 (use-package magit
-  :ensure t)
+             :ensure t)
 
 ;; darker theme
 (use-package srcery-theme
-  :ensure t
-  :config
-  (load-theme 'srcery t))
+             :ensure t
+             :config
+             (load-theme 'srcery t))
 
-;; disable mouse
-(use-package disable-mouse
-  :ensure t
-  :config
-  (global-disable-mouse-mode))
+;; which-key
+(use-package which-key
+             :ensure t
+             :diminish
+             :config
+             (which-key-mode 1)
+             (setq which-key-side-window-location 'bottom
+                   which-key-sort-order #'which-key-key-order-alpha
+                   which-key-allow-imprecise-window-fit nil
+                   which-key-sort-uppercase-first nil
+                   which-key-add-column-padding 1
+                   which-key-max-display-columns nil
+                   which-key-min-display-lines 6
+                   which-key-side-window-slot -10
+                   which-key-side-window-max-height 0.25
+                   which-key-idle-delay 0.8
+                   which-key-max-description-length 25
+                   which-key-allow-imprecise-window-fit nil
+                   which-key-separator " → " ))
+
+;; tldr
+(use-package tldr
+             :ensure t)
+
+;; modeline
+(use-package doom-modeline
+             :ensure t
+             :init (doom-modeline-mode 1)
+             :config
+             (setq doom-modeline-height 35      ;; sets modeline height
+                   doom-modeline-bar-width 5    ;; sets right bar width
+                   doom-modeline-persp-name t   ;; adds perspective name to modeline
+                   doom-modeline-persp-icon t)) ;; adds folder icon next to persp name
