@@ -1,10 +1,11 @@
 # Add all directories in `~/.local/bin` to $PATH
-export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
+export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -):$HOME/.local/share/go/bin:$HOME/.local/share/cargo/bin"
 
 unsetopt PROMPT_SP 2>/dev/null
 
 # Default programs:
 export EDITOR="nvim"
+export BROWSER="firefox"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -19,5 +20,26 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GOPATH="$XDG_DATA_HOME/go"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export HISTFILE="$XDG_DATA_HOME/history"
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
+export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch-config"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export KODI_DATA="$XDG_DATA_HOME/kodi"
+export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
+export UNISON="$XDG_DATA_HOME/unison"
+export MBSYNCRC="$XDG_CONFIG_HOME/mbsync/config"
+export ELECTRUMDIR="$XDG_DATA_HOME/electrum"
+export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
+export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
+
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export LESS="R"
+export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
+export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
+export LESS_TERMCAP_me="$(printf '%b' '[0m')"
+export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
+export LESS_TERMCAP_se="$(printf '%b' '[0m')"
+export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
+export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
+export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
