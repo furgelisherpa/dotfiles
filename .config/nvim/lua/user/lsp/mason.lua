@@ -2,6 +2,7 @@ local servers = {
 	"lua_ls",
 	"clangd",
   "marksman",
+  "texlab",
 }
 
 local settings = {

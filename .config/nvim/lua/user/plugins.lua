@@ -1,6 +1,6 @@
 -- automatically install a packer
 local ensure_packer = function()
-  local fn = vim.fn
+ local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -112,9 +112,12 @@ return require('packer').startup(function(use)
 
   -- markdown preview
   use {
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+    'iamcco/markdown-preview.nvim',
+    run = function() vim.fn['mkdp#util#install']() end,
   }
+
+  -- latex
+  use { 'lervag/vimtex' }
 
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all configs
