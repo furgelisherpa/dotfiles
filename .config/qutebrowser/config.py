@@ -1,13 +1,13 @@
-# Enble system clipbord
-c.content.javascript.can_access_clipboard = True
+# Enable system clipbord
+c.content.javascript.clipboard = "access"
 # Adblocker
 c.content.blocking.method = 'both'
-# When to show the statusbar.
+# When to show the status bar.
 c.statusbar.show = 'never'
 # Tabs
 c.tabs.position = 'bottom'
 c.tabs.show = 'switching'
-# Enable darkmode
+# Enable dark mode
 c.colors.webpage.darkmode.enabled = True
 # Default editor
 c.editor.command = ['emacsclient', '-c', '-a', 'emacs', '{file}']
