@@ -1,11 +1,12 @@
-# Add all directories in `~/.local/bin` to $PATH
-export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -):$HOME/.local/share/go/bin:$HOME/.local/share/cargo/bin"
+# Locale
+export LC_ALL="en_US.UTF-8"
 
+# Path
+export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -):$HOME/.local/share/go/bin:$HOME/.local/share/cargo/bin"
 unsetopt PROMPT_SP 2>/dev/null
 
 # Default programs:
 export EDITOR="nvim"
-export BROWSER="firefox"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -16,6 +17,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export GPG_TTY="$(tty)"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GOPATH="$XDG_DATA_HOME/go"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
@@ -43,3 +45,5 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
+
+export MANPAGER='nvim +Man!' 
