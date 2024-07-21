@@ -52,7 +52,7 @@ local opts = {
 local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
-  ["s"] = { "<cmd>set spell!<cr>", "Toggle Spell Checking"},
+  ["s"] = { "<cmd>set spell!<cr>", "Toggle Spell Checking" },
 
   f = {
     name = "Find",
@@ -81,6 +81,7 @@ local mappings = {
       "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Buffers",
     },
+    ["t"] = { "<cmd>filetype detect<cr>", "Detect Filetype" },
   },
 
   p = {
@@ -129,7 +130,7 @@ local mappings = {
     name = "Terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+    c = { "<cmd>lua _BC_TOGGLE()<cr>", "Calculator" },
     p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=15 direction=horizontal<cr>", "Horizontal" },

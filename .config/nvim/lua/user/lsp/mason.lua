@@ -3,6 +3,7 @@ local servers = {
 	"clangd",
   "marksman",
   "texlab",
+  "gopls",
 }
 
 local settings = {

@@ -56,9 +56,6 @@ return require('packer').startup(function(use)
   -- colorscheme
   use { 'rebelot/kanagawa.nvim' }
 
-  -- colorizer
-  use { 'norcalli/nvim-colorizer.lua' }
-
   -- tabline
   use { 'alvarosevilla95/luatab.nvim' }
 

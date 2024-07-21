@@ -5,6 +5,16 @@ local mod_cache = nil
 return {
   default_config = {
     cmd = { 'gopls' },
+    settings = {
+      gopls = {
+        experimentalPostfixCompletions = true,
+        analyses = {
+          unusedparams = true,
+          shadow = true,
+        },
+        staticcheck = true,
+      },
+    },
     filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
     root_dir = function(fname)
       -- see: https://github.com/neovim/nvim-lspconfig/issues/804
@@ -35,3 +45,5 @@ return {
     },
   },
 }
+
+

@@ -83,4 +83,4 @@ vim.opt.conceallevel = 2
 
 -- spell lang
 vim.opt.spelllang = "en_us"
-vim.opt.spell = true
+vim.opt.spell = false
