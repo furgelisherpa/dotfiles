@@ -19,7 +19,10 @@ export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export GPG_TTY="$(tty)"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export GOPATH="$XDG_DATA_HOME/go"
+
+export GPATH="$HOME/.github/golang"
+export GOROOT="$XDG_DATA_HOME/go"
+
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export HISTFILE="$XDG_DATA_HOME/history"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
