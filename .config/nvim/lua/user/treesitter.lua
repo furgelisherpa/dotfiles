@@ -3,7 +3,7 @@ if (not status_ok) then
   return
 end
 
-ts.setup {
+ts.setup({
   highlight = {
     enable = true,
     disable = { "latex" },
@@ -22,4 +22,6 @@ ts.setup {
   },
   auto_install = true,
   autotag = { enable = true, },
-}
+  sync_install = false,
+  ignore_install = {},
+})
