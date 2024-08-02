@@ -1,6 +1,6 @@
 -- automatically install a packer
 local ensure_packer = function()
- local fn = vim.fn
+  local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -15,8 +15,8 @@ local packer_bootstrap = ensure_packer()
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
   augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  autocmd!
+  autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -54,7 +54,10 @@ return require('packer').startup(function(use)
   use { 'nvim-lualine/lualine.nvim' }
 
   -- colorscheme
-  use { 'rebelot/kanagawa.nvim' }
+  use {
+    'rebelot/kanagawa.nvim',
+    'ellisonleao/gruvbox.nvim',
+  }
 
   -- tabline
   use { 'alvarosevilla95/luatab.nvim' }
@@ -68,19 +71,22 @@ return require('packer').startup(function(use)
   -- project
   use { 'ahmedkhalf/project.nvim' }
 
- -- which-key
-  use { 'folke/which-key.nvim' }
+  -- which-key
+  use {
+    'folke/which-key.nvim',
+    commit = "0539da0" -- use v2.1.0
+  }
 
-	-- telescope
-	use { 'nvim-telescope/telescope.nvim' }
+  -- telescope
+  use { 'nvim-telescope/telescope.nvim' }
 
   -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
-      run = function()
-        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-        ts_update()
-     end,
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
   }
 
   -- file browser
