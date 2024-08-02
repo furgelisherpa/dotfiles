@@ -1,11 +1,14 @@
 # Enable system clipbord
-c.content.javascript.clipboard = "access"
+# for older qutebrowser_version
+c.content.javascript.can_access_clipboard = True
+# for newer qutebrowser_version
+# c.content.javascript.clipboard = "access"
 # Adblocker
 c.content.blocking.method = 'both'
 # When to show the status bar.
 c.statusbar.show = 'never'
 # Tabs
-c.tabs.position = 'bottom'
+c.tabs.position = 'left'
 c.tabs.show = 'switching'
 # Enable dark mode
 c.colors.webpage.darkmode.enabled = True
@@ -47,4 +50,4 @@ config.set('content.local_content_can_access_file_urls', False, 'file:///home/ps
 config.bind('M', 'hint links spawn mpv {hint-url}')
 
 # Load theme
-config.source(config.configdir / 'kanagawa.py')
+config.source(config.configdir / 'gruvbox.py')
