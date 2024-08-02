@@ -17,66 +17,54 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-echo -ne '\e[1 q' # Use block shape cursor on startup.
-preexec() { echo -ne '\e[1 q' ;} # Use block shape cursor for each new prompt.
-
-bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
-bindkey '^[[P' delete-char
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-bindkey -M vicmd '^[[P' vi-delete-char
-bindkey -M vicmd '^e' edit-command-line
-bindkey -M visual '^[[P' vi-delete
+# emacs mode
+set -o emacs
 
 # alias
 alias cp="cp -iv"
-alias	mv="mv -iv"
-alias	rm="rm -vI"
-alias	bc="bc -ql"
-alias	rsync="rsync -vrPlu"
-alias	mkd="mkdir -pv"
-alias	yt="yt-dlp --embed-metadata -i"
-alias	yta="yt -x -f bestaudio/best"
-alias	ytt="yt --skip-download --write-thumbnail"
-alias	ffmpeg="ffmpeg -hide_banner"
+alias mv="mv -iv"
+alias rm="rm -vI"
+alias bc="bc -ql"
+alias rsync="rsync -vrPlu"
+alias mkd="mkdir -pv"
+alias yt="yt-dlp --embed-metadata -i"
+alias yta="yt -x -f bestaudio/best"
+alias ytt="yt --skip-download --write-thumbnail"
+alias ffmpeg="ffmpeg -hide_banner"
 alias ls="lsd -hN --color=auto --group-directories-first"
-alias	grep="grep --color=auto"
-alias	diff="diff --color=auto"
-alias	ccat="highlight --out-format=ansi"
-alias	ip="ip -color=auto"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ccat="highlight --out-format=ansi"
+alias ip="ip -color=auto"
 alias ka="killall"
-alias	g="git"
-alias	trem="transmission-remote"
-alias	YT="youtube-viewer"
-alias	sdn="shutdown -h now"
-alias	e="$EDITOR"
-alias	v="$EDITOR"
-alias	z="zathura"
-alias	magit="nvim -c MagitOnly"
+alias g="git"
+alias trem="transmission-remote"
+alias YT="youtube-viewer"
+alias sdn="shutdown -h now"
+alias e="$EDITOR"
+alias v="$EDITOR"
+alias z="zathura"
 alias bc="bc -lq"
 alias cmacs="emacsclient -c -a 'nvim'"
 alias nvimdiff="nvim -d"
+alias python="python3"
+alias sim="setsid -f ~/.local/src/SimulIDE_1.1.0-SR0_Lin64/simulide 2&>1 >/dev/null"
 
 # sudo not required for some system commands
-for command in mount umount sv updatedb su shutdown poweroff reboot ; do
+for command in mount umount updatedb su shutdown poweroff reboot; do
 	alias $command="sudo $command"
 done; unset command
 
-# fuzzy finder
-se() {
-  choice="$(find ~/.local/bin -mindepth 1 -printf '%P\n' | fzf)"
-  [ -f "$HOME/.local/bin/$choice" ] && $EDITOR "$HOME/.local/bin/$choice";
+# fuzzy find
+function sr {
+  dir="$1"
+  choice="$(find $dir -mindepth 1 -printf '%P\n' | fzf)"
+  [[ -d "$dir/$choice" || -f "$dir/$choice" ]] && $EDITOR "$dir/$choice"
 }
+
+alias se="sr ~/.local/bin" # scripts
+alias scc="sr ~/.config" # config
+alias sp="sr ~/.github" # projects
+
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
