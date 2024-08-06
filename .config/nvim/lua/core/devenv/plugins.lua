@@ -14,10 +14,10 @@ local packer_bootstrap = ensure_packer()
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
-  augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end
 ]])
 
 -- if a packer is not loaded then do nothing
@@ -54,16 +54,13 @@ return require('packer').startup(function(use)
   use { 'nvim-lualine/lualine.nvim' }
 
   -- colorscheme
-  use {
-    'rebelot/kanagawa.nvim',
-    'ellisonleao/gruvbox.nvim',
-  }
+  use { 'ellisonleao/gruvbox.nvim' }
 
   -- tabline
   use { 'alvarosevilla95/luatab.nvim' }
 
   -- cool
-  use { 'moll/vim-bbye' }
+  -- use { 'moll/vim-bbye' }
 
   -- terminal
   use { 'akinsho/toggleterm.nvim' }
@@ -124,6 +121,9 @@ return require('packer').startup(function(use)
 
   -- gitsigns
   use { 'lewis6991/gitsigns.nvim' }
+
+  -- formatter
+  use { 'nvimtools/none-ls.nvim' }
 
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all configs
