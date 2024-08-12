@@ -20,8 +20,8 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export GPG_TTY="$(tty)"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
-export GPATH="$HOME/.github/golang"
-export GOROOT="$XDG_DATA_HOME/go"
+export GOROOT="/usr/lib/golang/"
+export GOPATH="${XDG_DATA_HOME}/go"
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export HISTFILE="$XDG_DATA_HOME/history"
