@@ -53,14 +53,8 @@ return require('packer').startup(function(use)
   -- lualine
   use { 'nvim-lualine/lualine.nvim' }
 
-  -- colorscheme
-  use { 'ellisonleao/gruvbox.nvim' }
-
   -- tabline
   use { 'alvarosevilla95/luatab.nvim' }
-
-  -- cool
-  -- use { 'moll/vim-bbye' }
 
   -- terminal
   use { 'akinsho/toggleterm.nvim' }
@@ -124,6 +118,15 @@ return require('packer').startup(function(use)
 
   -- formatter
   use { 'nvimtools/none-ls.nvim' }
+
+  -- dashboard
+  use { 'goolord/alpha-nvim' }
+
+  -- multiline cursor
+  use { 'mg979/vim-visual-multi' }
+
+  -- colorscheme
+  use { 'davidosomething/vim-colors-meh' }
 
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all configs
