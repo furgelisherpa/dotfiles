@@ -126,7 +126,16 @@ return require('packer').startup(function(use)
   use { 'mg979/vim-visual-multi' }
 
   -- colorscheme
-  use { 'davidosomething/vim-colors-meh' }
+  use { 'bluz71/vim-moonfly-colors' }
+
+  -- indent
+  use { 'lukas-reineke/indent-blankline.nvim' }
+
+  -- delimiters
+  use { 'HiPhish/rainbow-delimiters.nvim' }
+
+  -- orgmode
+  use { 'nvim-orgmode/orgmode' }
 
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all configs

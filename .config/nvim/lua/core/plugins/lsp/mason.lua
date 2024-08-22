@@ -2,8 +2,8 @@ local servers = {
   "marksman",
   "texlab",
   "clangd",
-  "gopls",
   "lua_ls"
+  -- "gopls",
 }
 
 local settings = {
