@@ -54,6 +54,7 @@ local mappings = {
   ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
   ["s"] = { "<cmd>set spell!<cr>", "Toggle Spell Checking" },
   ["cc"] = { "<cmd>!compiler %<cr>", "Compile" },
+  ["dd"] = { "<cmd>tabe | Alpha<cr>", "Alpha dashboard" },
 
   f = {
     name = "Find",
