@@ -8,7 +8,8 @@ vim.opt.shortmess:append 'I'
 vim.opt.guicursor = 'n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor'
 
 -- remove a '~' character
-vim.opt.fillchars = { eob = ' ' }
+-- didn't get the feeling of using vim so comment out this option
+-- vim.opt.fillchars = { eob = ' ' }
 
 -- hide a current mode status i.e INSERT, NORMAL, VISUAL, BLAH, BLAH
 vim.opt.showmode = false

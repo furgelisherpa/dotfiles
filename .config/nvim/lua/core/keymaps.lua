@@ -1,56 +1,59 @@
+-- global options
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
 
--- Shorten function name
+-- shorten function name
 local keymap = vim.keymap.set
 
---Remap space as leader key
+--remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Normal --
+-- normal --
+-- switch window
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- resize with arrows
+keymap("n", "<C-Up>", "<cmd>resize -2<cr>", opts)
+keymap("n", "<C-Down>", "<cmd>resize +2<cr>", opts)
+keymap("n", "<C-Left>", "<cmd>vertical resize -2<cr>", opts)
+keymap("n", "<C-Right>", "<cmd>vertical resize +2<cr>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":tabnext<CR>", opts)
-keymap("n", "<S-h>", ":tabprev<CR>", opts)
+-- navigate tabs
+keymap("n", "<S-l>", "<cmd>tabnext<cr>", opts)
+keymap("n", "<S-h>", "<cmd>tabprev<cr>", opts)
+keymap("n", "<leader>qq", "<cmd>tabclose<cr>", opts)
 
--- Move text up and down
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
+-- move text up and down
+keymap("n", "<A-j>", "<cmd>m .+1<cr>==", opts)
+keymap("n", "<A-k>", "<cmd>m .-2<cr>==", opts)
 
--- Insert --
--- Press jk fast to exit insert mode 
+-- insert --
+-- press jk fast to exit insert mode 
 keymap("i", "kj", "<ESC>", opts)
 keymap("i", "jk", "<ESC>", opts)
 
--- Visual --
+-- visual --
 keymap("v", "<", "<gv^", opts)
 keymap("v", ">", ">gv^", opts)
 
--- Move text up and down
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+-- move text up and down
+keymap("v", "<A-j>", "<cmd>m '>+1<cr>gv=gv", opts)
+keymap("v", "<A-k>", "<cmd>m '<-2<cr>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
--- Visual Block --
-keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
-keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+-- visual block --
+keymap("x", "J", "<cmd>m '>+1<cr>gv=gv", opts)
+keymap("x", "K", "<cmd>m '<-2<cr>gv=gv", opts)
+keymap("x", "<A-j>", "<cmd>m '>+1<cr>gv=gv", opts)
+keymap("x", "<A-k>", "<cmd>m '<-2<cr>gv=gv", opts)
 
--- Terminal --
+-- terminal --
+-- switch terminal windows
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
