@@ -26,11 +26,20 @@ keymap("n", "<C-Right>", "<cmd>vertical resize +2<cr>", opts)
 -- navigate tabs
 keymap("n", "<S-l>", "<cmd>tabnext<cr>", opts)
 keymap("n", "<S-h>", "<cmd>tabprev<cr>", opts)
-keymap("n", "<leader>qq", "<cmd>tabclose<cr>", opts)
+keymap("n", "<leader>tc", "<cmd>tabclose<cr>", opts)
 
 -- move text up and down
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", opts)
 keymap("n", "<A-k>", "<cmd>m .-2<cr>==", opts)
+
+-- copy current path into the paste buffer
+keymap("n", "<leader>fp", "<cmd>let @+=expand(\"%:p\")<cr>", opts)
+
+-- shortcut for opening/closing quickfix
+keymap("n", "<leader>q", "<cmd>ccl<cr>", opts)
+
+-- save my fingers when saving
+keymap("n", "<leader>w", "<cmd>w!<cr>", opts)
 
 -- insert --
 -- press jk fast to exit insert mode 
