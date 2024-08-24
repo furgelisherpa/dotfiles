@@ -16,8 +16,7 @@ startify.section.top_buttons.val = {
   startify.button("e", "New file" ,     "<cmd>ene <BAR> startinsert <cr>"),
   startify.button("r", "Recent files",  "<cmd>Telescope oldfiles<cr>"),
   startify.button("p", "Find projects", "<cmd>Telescope projects<cr>"),
-  startify.button("c", "Neovim Config", "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim'})<cr>"),
-  startify.button("h", "Help" ,         "<cmd>tabe | help | wincmd o<cr>"),
+  startify.button("c", "Nvim Config",   "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim'})<cr>"),
   startify.button("q", "Quit Neovim" ,  "<cmd>qa<cr>"),
 }
 startify.section.mru_cwd.val = { { type = "padding", val = 0 } }
