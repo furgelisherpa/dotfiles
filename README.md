@@ -3,5 +3,5 @@
 ## How to deploy it
 ``` bash
 git clone --depth 1 https://github.com/furgelisherpa/dotfiles ~/.dotfiles
-cd ~/.dotfiles && sh deploy
+cd ~/.dotfiles && ./deploy
 ```
