@@ -85,10 +85,11 @@ vim.opt.timeoutlen = 300
 vim.opt.formatoptions:remove({ "c", "r", "o" })
 
 -- hyphenated words recognized by searches
-vim.opt.iskeyword:append("-,$")
+vim.opt.iskeyword:append("-,$,_")
 
 -- clean
 vim.opt.conceallevel = 2
+vim.opt.concealcursor = 'nc'
 
 -- spell lang
 vim.opt.spelllang = "en_us"
