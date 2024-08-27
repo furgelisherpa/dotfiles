@@ -113,9 +113,6 @@ return require('packer').startup(function(use)
   -- latex
   use { 'lervag/vimtex' }
 
-  -- gitsigns
-  use { 'lewis6991/gitsigns.nvim' }
-
   -- formatter
   use { 'nvimtools/none-ls.nvim' }
 

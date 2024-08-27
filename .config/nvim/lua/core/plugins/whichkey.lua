@@ -55,6 +55,7 @@ local mappings = {
   ["s"] = { "<cmd>set spell!<cr>", "Toggle Spell Checking" },
   ["cc"] = { "<cmd>!compiler %<cr>", "Compile" },
   ["db"] = { "<cmd>tabe | Alpha<cr>", "Alpha Dashboard" },
+  ["p"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview Markdown"},
 
   f = {
     name = "Find",
@@ -62,10 +63,7 @@ local mappings = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Files"
     },
-    ["p"] = {
-      "<cmd>lua require('telescope').extensions.projects.projects()<cr>",
-      "Projects"
-    },
+    ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["t"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
     ["h"] = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     ["m"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
@@ -86,32 +84,6 @@ local mappings = {
     ["t"] = { "<cmd>filetype detect<cr>", "Detect Filetype" },
   },
 
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
-
-  g = {
-    name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
-  },
-
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -130,10 +102,6 @@ local mappings = {
 
   t = {
     name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    c = { "<cmd>lua _BC_TOGGLE()<cr>", "Calculator" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=15 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
