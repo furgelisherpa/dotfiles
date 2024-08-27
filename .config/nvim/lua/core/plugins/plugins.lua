@@ -134,9 +134,6 @@ return require('packer').startup(function(use)
   -- delimiters
   use { 'HiPhish/rainbow-delimiters.nvim' }
 
-  -- orgmode
-  use { 'nvim-orgmode/orgmode' }
-
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all configs
   if packer_bootstrap then
