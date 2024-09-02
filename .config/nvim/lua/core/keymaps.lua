@@ -41,6 +41,9 @@ keymap("n", "<leader>q", "<cmd>ccl<cr>", opts)
 -- save my fingers when saving
 keymap("n", "<leader>w", "<cmd>w!<cr>", opts)
 
+-- reindent an entire buffer
+keymap("n", "<leader>g=", "<cmd>norm gg=G<cr>", opts)
+
 -- insert --
 -- press jk fast to exit insert mode 
 keymap("i", "kj", "<ESC>", opts)
