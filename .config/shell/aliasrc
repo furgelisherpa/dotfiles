@@ -8,7 +8,7 @@ alias yt="yt-dlp --embed-metadata -i"
 alias yta="yt -x -f bestaudio/best"
 alias ytt="yt --skip-download --write-thumbnail"
 alias ffmpeg="ffmpeg -hide_banner"
-alias ls="lsd -hN --color=auto --group-directories-first"
+alias ls="lsd -h --color=auto --group-directories-first"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ccat="highlight --out-format=ansi"
@@ -25,7 +25,6 @@ alias bc="bc -lq"
 alias cmacs="emacsclient -c -a 'nvim'"
 alias nvimdiff="nvim -d"
 alias python="python3"
-alias sim="setsid -f ~/.local/src/SimulIDE_1.1.0-SR0_Lin64/simulide 2&>1 >/dev/null"
 
 # sudo not required for some system commands
 for command in mount umount updatedb su shutdown poweroff reboot; do
