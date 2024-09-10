@@ -1,46 +1,48 @@
 #!/bin/sh
 
 FONT_NAME="ComicShannsMono"
-FONT_DIR="$HOME/.local/share/fonts/$FONT_NAME"
+FONT_DIR="${HOME}/.local/share/fonts/${FONT_NAME}"
 
-DOTFILES_DIR="$HOME/.dotfiles"
-CONFIG_DIR="$HOME/.config"
+DOTFILES_DIR="${HOME}/.dotfiles"
+CONFIG_DIR="${HOME}/.config"
 
-mkdir -p "$CONFIG_DIR"
+mkdir -p "${CONFIG_DIR}"
 
 echo "Linking .dotfiles/* to ~/"
-find "$DOTFILES_DIR" -mindepth 1 -maxdepth 1 ! -name 'README.md' ! -name 'LICENSE' ! -name '.git' ! -name 'deploy' ! -path "$DOTFILES_DIR/.config" -exec sh -c '
-for target; do
-  link_name="$HOME/$(basename "$target")"
-  if [ -e "$link_name" ]; then
-    echo "[STATUS] Skipping $link_name; already exists"
+find "${DOTFILES_DIR}" -mindepth 1 -maxdepth 1 ! -name 'README.md' ! -name 'LICENSE' ! -name '.git' ! -name 'deploy' ! -path "${DOTFILES_DIR}/.config" -exec sh -c '
+for TARGET; do
+  LINK_NAME="${HOME}/`basename "${TARGET}"`"
+  BASE_LINK_NAME="`basename "${LINK_NAME}"`"
+  if [ -e "${LINK_NAME}" ]; then
+    echo "[STATUS] Skipping ${BASE_LINK_NAME}; already established"
   else
-    ln -s "$target" "$link_name"
-    echo "[INFO] Linked $target to $link_name"
+    ln -s "${TARGET}" "${LINK_NAME}"
+    echo "[INFO] Link established: ${BASE_LINK_NAME} -> ${LINK_NAME}"
   fi
 done
 ' sh {} +
 
-find "$DOTFILES_DIR/.config" -mindepth 1 -maxdepth 1 -exec sh -c '
-for target; do
-  link_name="$HOME/.config/$(basename "$target")"
-  if [ -e "$link_name" ]; then
-    echo "[STATUS] Skipping $link_name; already exists"
+find "${DOTFILES_DIR}/.config" -mindepth 1 -maxdepth 1 -exec sh -c '
+for TARGET; do
+  LINK_NAME="${HOME}/.config/`basename "${TARGET}"`"
+  BASE_LINK_NAME="`basename "${LINK_NAME}"`"
+  if [ -e "${LINK_NAME}" ]; then
+    echo "[STATUS] Skipping ${BASE_LINK_NAME}; already established"
   else
-    ln -s "$target" "$link_name"
-    echo "[INFO] Linked $target to $link_name"
+    ln -s "${TARGET}" "${LINK_NAME}"
+    echo "[INFO] Link established: ${BASE_LINK_NAME} -> ${LINK_NAME}"
   fi
 done
 ' sh {} +
 
-[[ ! -d "$FONT_DIR" ]] && {
-  echo "[INFO] Downloading $FONT_NAME Nerd Font"
-  curl -Lo /tmp/"$FONT_NAME".tar.xz https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/"$FONT_NAME".tar.xz
-  echo "[INFO] Installing $FONT_NAME Nerd Font"
-  mkdir -p "$FONT_DIR"
-  tar -xvf /tmp/"$FONT_NAME".tar.xz -C "$FONT_DIR" 2>&1 >/dev/null
-  fc-cache -vf 2>&1 >/dev/null
+[ ! -d "${FONT_DIR}" ] && {
+  echo "[INFO] Downloading ${FONT_NAME} Nerd Font"
+  curl -Lo /tmp/"${FONT_NAME}".tar.xz https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/"${FONT_NAME}".tar.xz >/dev/null 2>&1
+  echo "[INFO] Installing ${FONT_NAME} Nerd Font"
+  mkdir -p "${FONT_DIR}"
+  tar -xvf /tmp/"${FONT_NAME}".tar.xz -C "${FONT_DIR}" >/dev/null 2>&1
+  fc-cache -vf >/dev/null 2>&1
   echo "[STATUS] Installation Finished!" && exit 0
 }
 
-echo "[STATUS] $FONT_NAME is already installed!" && exit 1
+echo "[STATUS] ${FONT_NAME} is already installed!" && exit 1
