@@ -116,9 +116,6 @@ return require('packer').startup(function(use)
   -- formatter
   use { 'nvimtools/none-ls.nvim' }
 
-  -- dashboard
-  use { 'goolord/alpha-nvim' }
-
   -- multiline cursor
   use { 'mg979/vim-visual-multi' }
 

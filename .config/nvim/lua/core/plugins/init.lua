@@ -1,4 +1,3 @@
-require "core.plugins.alpha"
 require "core.plugins.autopairs"
 require "core.plugins.cmp"
 require "core.plugins.colorscheme"
