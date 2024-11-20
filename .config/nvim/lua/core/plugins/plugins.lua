@@ -13,12 +13,15 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
-augroup end
-]])
+local packer_user_config = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = packer_user_config,
+  pattern = "plugins.lua",
+  callback = function()
+    vim.cmd("source " .. vim.fn.expand("<afile>"))
+    vim.cmd("PackerSync")
+  end,
+})
 
 -- if a packer is not loaded then do nothing
 local status_ok, packer = pcall(require, 'packer')
@@ -38,39 +41,29 @@ packer.init({
 -- plugins
 return require('packer').startup(function(use)
   -- plugin manager
-  use { 'wbthomason/packer.nvim' }
-
+  use 'wbthomason/packer.nvim'
   -- require for packer pop up window
-  use { 'nvim-lua/popup.nvim' }
-  use { 'nvim-lua/plenary.nvim' }
-
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
   -- insert a paranthesis automatiacally
-  use { 'windwp/nvim-autopairs' }
-
+  use 'windwp/nvim-autopairs'
   -- comment
-  use { 'numToStr/Comment.nvim' }
-
+  use 'numToStr/Comment.nvim'
   -- lualine
-  use { 'nvim-lualine/lualine.nvim' }
-
+  use 'nvim-lualine/lualine.nvim'
   -- tabline
-  use { 'alvarosevilla95/luatab.nvim' }
-
+  use 'alvarosevilla95/luatab.nvim'
   -- terminal
-  use { 'akinsho/toggleterm.nvim' }
-
+  use 'akinsho/toggleterm.nvim'
   -- project
-  use { 'ahmedkhalf/project.nvim' }
-
+  use 'ahmedkhalf/project.nvim'
   -- which-key
   use {
     'folke/which-key.nvim',
-    commit = "0539da0" -- use v2.1.0
+    commit = '0539da0' -- use v2.1.0
   }
-
   -- telescope
-  use { 'nvim-telescope/telescope.nvim' }
-
+  use 'nvim-telescope/telescope.nvim'
   -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -79,54 +72,46 @@ return require('packer').startup(function(use)
       ts_update()
     end,
   }
-
-  -- file browser
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = { 'nvim-tree/nvim-web-devicons' }
-  }
-
   -- cmp
-  use { 'hrsh7th/nvim-cmp' }
-  use { 'hrsh7th/cmp-buffer' }
-  use { 'hrsh7th/cmp-path' }
-  use { 'saadparwaiz1/cmp_luasnip' }
-  use { 'hrsh7th/cmp-nvim-lsp' }
-  use { 'hrsh7th/cmp-nvim-lua' }
-
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
   -- snippet
-  use { 'L3MON4D3/LuaSnip' }
-  use { 'rafamadriz/friendly-snippets' }
-
+  use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
   -- lsp
-  use { 'neovim/nvim-lspconfig' }
-  use { 'williamboman/mason.nvim' }
-  use { 'williamboman/mason-lspconfig.nvim' }
-  use { 'RRethy/vim-illuminate' }
-
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'RRethy/vim-illuminate'
   -- markdown preview
   use {
     'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
   }
-
   -- latex
-  use { 'lervag/vimtex' }
-
+  use 'lervag/vimtex'
   -- formatter
-  use { 'nvimtools/none-ls.nvim' }
-
+  use 'nvimtools/none-ls.nvim'
   -- multiline cursor
-  use { 'mg979/vim-visual-multi' }
-
+  use 'mg979/vim-visual-multi'
   -- colorscheme
-  use { 'bluz71/vim-moonfly-colors' }
-
+  use 'bluz71/vim-moonfly-colors'
   -- indent
-  use { 'lukas-reineke/indent-blankline.nvim' }
-
+  use 'lukas-reineke/indent-blankline.nvim'
   -- delimiters
-  use { 'HiPhish/rainbow-delimiters.nvim' }
+  use 'HiPhish/rainbow-delimiters.nvim'
+  -- dired like for nvim
+  use {
+    'stevearc/oil.nvim',
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+      'nvim-tree/nvim-tree.lua' -- file manager
+    }
+  }
 
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all configs
