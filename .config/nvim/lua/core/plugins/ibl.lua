@@ -5,6 +5,6 @@ end
 
 ibl.setup {
   indent = { char = "▏" },
-  whitespace = { remove_blankline_trail = false },
+  whitespace = { remove_blankline_trail = true },
   scope = { enabled = false },
 }
