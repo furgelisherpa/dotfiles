@@ -5,6 +5,7 @@ FONT_DIR="${HOME}/.local/share/fonts/${FONT_NAME}"
 
 DOTFILES_DIR="${HOME}/.dotfiles"
 CONFIG_DIR="${HOME}/.config"
+LOCAL_BIN_DIR="${HOME}/.local/bin"
 
 mkdir -p "${CONFIG_DIR}"
 
@@ -22,9 +23,25 @@ for TARGET; do
 done
 ' sh {} +
 
+echo "Linking .dotfiles/.config/* to ~/.config/"
 find "${DOTFILES_DIR}/.config" -mindepth 1 -maxdepth 1 -exec sh -c '
 for TARGET; do
   LINK_NAME="${HOME}/.config/`basename "${TARGET}"`"
+  BASE_LINK_NAME="`basename "${LINK_NAME}"`"
+  if [ -e "${LINK_NAME}" ]; then
+    echo "[STATUS] Skipping ${BASE_LINK_NAME}; already established"
+  else
+    ln -s "${TARGET}" "${LINK_NAME}"
+    echo "[INFO] Link established: ${BASE_LINK_NAME} -> ${LINK_NAME}"
+  fi
+done
+' sh {} +
+
+echo "Linking .dotfiles/.local/bin/* to ~/.local/bin/"
+mkdir -p "${LOCAL_BIN_DIR}"
+find "${DOTFILES_DIR}/.local/bin" -mindepth 1 -maxdepth 1 -exec sh -c '
+for TARGET; do
+  LINK_NAME="${HOME}/.local/bin/`basename "${TARGET}"`"
   BASE_LINK_NAME="`basename "${LINK_NAME}"`"
   if [ -e "${LINK_NAME}" ]; then
     echo "[STATUS] Skipping ${BASE_LINK_NAME}; already established"
