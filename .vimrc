@@ -1,11 +1,11 @@
 filetype on
 syntax on
 
-set autoindent smartindent breakindent autoread background=dark termguicolors
+set nocompatible autoindent smartindent breakindent autoread background=dark termguicolors
 set backspace=indent,eol,start belloff=all
 set display=lastline encoding=utf-8 hidden
 set history=10000 incsearch nohlsearch
-set nojoinspaces laststatus=2 ruler
+set nojoinspaces laststatus=0 ruler
 set showcmd smarttab nostartofline
 set switchbuf=uselast wildmenu wildoptions=pum,tagfile
 set clipboard+=unnamedplus
@@ -22,5 +22,9 @@ set signcolumn=yes
 set splitbelow splitright
 set title updatetime=250
 set undofile undodir=~/.local/state/vim/undo//
+set shortmess+=I
+set fillchars=stl:\ ,stlnc:\ ,vert:\|,fold:-,diff:-,eob:\ ,foldopen:\-,foldclose:\+
 
-colorscheme habamax
+colorscheme retrobox
+
+cnoremap rc :tabe ~/.vimrc<CR>
