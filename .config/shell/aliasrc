@@ -5,8 +5,11 @@ alias bc="bc -ql"
 alias rsync="rsync -vrPlu"
 alias mkd="mkdir -pv"
 alias yt="yt-dlp --embed-metadata -i"
-alias yta="yt -x -f bestaudio/best"
+alias yta="yt -x --extract-audio --audio-format mp3 --audio-quality 0"
 alias ytt="yt --skip-download --write-thumbnail"
+alias ytv='yt -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" --merge-output-format mkv'
+alias ytp='ytv -ciw -o "%(playlist_index)s - %(title)s.%(ext)s"'
+alias yap='yta -o "%(title)s.%(ext)s"'
 alias ffmpeg="ffmpeg -hide_banner"
 alias ls="lsd -h --color=auto --group-directories-first"
 alias grep="grep --color=auto"
