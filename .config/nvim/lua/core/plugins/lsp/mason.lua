@@ -1,9 +1,9 @@
 local servers = {
   "marksman",
-  "texlab",
   "clangd",
   "lua_ls",
   "jdtls",
+  "pylsp"
 }
 
 local settings = {
