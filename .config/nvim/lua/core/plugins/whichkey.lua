@@ -50,12 +50,11 @@ local opts = {
 }
 
 local mappings = {
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
   ["s"] = { "<cmd>set spell!<cr>", "Toggle Spell Checking" },
   ["cc"] = { "<cmd>!compiler %<cr>", "Compile" },
-  ["db"] = { "<cmd>tabe | Alpha<cr>", "Alpha Dashboard" },
   ["p"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview Markdown"},
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "File Manager"},
 
   f = {
     name = "Find",
