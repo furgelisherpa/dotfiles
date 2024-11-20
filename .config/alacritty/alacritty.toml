@@ -29,12 +29,11 @@ history = 5000
 
 [window]
 dynamic_padding = false
-opacity = 0.5
+opacity = 0.8
 blur = true
 title = "Alacritty"
 class = { general = "Alacritty", instance = "Alacritty" }
-padding = { x = 6, y = 6 }
+startup_mode = "Maximized"
 
-[shell]
-program = "/usr/bin/zsh"
-args = [ "-c", "tmux a 2>&1 >/dev/null || tmux 2>&1 >/dev/null" ]
+[terminal]
+shell = { program = "/usr/bin/zsh", args = [ "-c", "tmux a 2>&1 >/dev/null || tmux 2>&1 >/dev/null" ] }
