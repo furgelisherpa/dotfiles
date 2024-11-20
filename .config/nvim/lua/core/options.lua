@@ -8,7 +8,7 @@ vim.opt.shortmess:append("I")
 vim.opt.guicursor = "n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
 
 -- remove a "~" character
--- vim.opt.fillchars = { eob = " " }
+vim.opt.fillchars = { eob = " " }
 
 -- hide a current mode status i.e INSERT, NORMAL, VISUAL, BLAH, BLAH
 vim.opt.showmode = false
@@ -72,7 +72,7 @@ vim.opt.foldnestmax = 10
 
 -- appearance
 vim.opt.termguicolors = true
-vim.opt.laststatus = 3
+vim.opt.laststatus = 0
 
 -- disable mouse
 vim.opt.mouse = ""
@@ -80,9 +80,6 @@ vim.opt.mouse = ""
 -- timeout
 vim.opt.timeout = true
 vim.opt.timeoutlen = 300
-
--- auto remove comment in "o" "O"
-vim.opt.formatoptions:remove({ "c", "r", "o" })
 
 -- hyphenated words recognized by searches
 vim.opt.iskeyword:append("-,$,_")
