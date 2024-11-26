@@ -99,7 +99,10 @@ return require('packer').startup(function(use)
   -- multiline cursor
   use 'mg979/vim-visual-multi'
   -- colorscheme
-  use 'bluz71/vim-moonfly-colors'
+  use {
+    'sainnhe/gruvbox-material',
+    requires = 'xiyaowong/transparent.nvim'
+  }
   -- indent
   use 'lukas-reineke/indent-blankline.nvim'
   -- delimiters
@@ -112,7 +115,6 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-tree.lua' -- file manager
     }
   }
-
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all configs
   if packer_bootstrap then
