@@ -1,8 +1,8 @@
 # Enable system clipbord
 # for older qutebrowser_version
-c.content.javascript.can_access_clipboard = True
+# c.content.javascript.can_access_clipboard = True
 # for newer qutebrowser_version
-# c.content.javascript.clipboard = "access"
+c.content.javascript.clipboard = "access"
 # Adblocker
 c.content.blocking.method = 'both'
 # When to show the status bar.

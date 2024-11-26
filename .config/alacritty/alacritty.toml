@@ -29,7 +29,7 @@ history = 5000
 
 [window]
 dynamic_padding = false
-opacity = 0.8
+opacity = 0.6
 blur = true
 title = "Alacritty"
 class = { general = "Alacritty", instance = "Alacritty" }
