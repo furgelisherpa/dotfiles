@@ -3,7 +3,7 @@
 ;; disable ring-bell
 (setq ring-bell-function 'ignore)
 ;; default font
-(set-face-attribute 'default nil :font "ComicShannsMono Nerd Font" :height 150)
+(set-face-attribute 'default nil :font "ComicShannsMono Nerd Font" :height 200)
 ;; disable menubar
 (menu-bar-mode -1)
 ;; disable toolbar
@@ -18,12 +18,12 @@
 (show-paren-mode 1)
 
 ;; set per-save backup
-(setq backup-directory-alist '(("" . "~/.emacs.d/backup/per-save")))
+(setq backup-directory-alist '(("" . "~/.local/share/emacs/backup/per-save")))
 
 ;; set per-session backup
 (defun force-backup-of-buffer ()
   (when (not buffer-backed-up)
-    (let ((backup-directory-alist '(("" . "~/.emacs.d/backup/per-session")))
+    (let ((backup-directory-alist '(("" . "~/.local/share/emacs/backup/per-session")))
           (kept-new-versions 3))
       (backup-buffer)))
   (let ((buffer-backed-up nil))
@@ -65,7 +65,6 @@
       '(("gnu" . "https://elpa.gnu.org/packages/")
         ("melpa" . "https://melpa.org/packages/")
         ("org" . "https://orgmode.org/elpa/")))
-
 (package-initialize)
 
 ;; install use-package
@@ -110,33 +109,3 @@
   :ensure t
   :config
   (load-theme 'gruvbox-dark-medium t))
-
-(use-package ivy
-  :ensure t
-  :defer 0.1
-  :diminish
-  :bind (("C-c C-r" . ivy-resume)
-         ("C-x B" . ivy-switch-buffer-other-window))
-  :custom
-  (ivy-count-format "(%d/%d) ")
-  (ivy-use-virtual-buffers t)
-  :config (ivy-mode))
-
-(use-package pdf-view
-  :ensure nil
-  :after pdf-tools
-  :bind (:map pdf-view-mode-map
-        ("C-s" . isearch-forward))
-  :custom (pdf-view-use-unicode-ligther nil))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(ivy gruvbox-theme which-key projectile use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
