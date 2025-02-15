@@ -107,3 +107,12 @@ vim.opt.formatoptions:append("j")
 -- ignore hated files generally at vim level (Some autocomplete engines picks up
 -- on and add their own ignored files to the mix)
 vim.opt.wildignore:append("*.swp,*.bak,*.pyc,*.class,*/tmp/*")
+
+-- display special characters like '.' for spaces and '>-' of tabs
+vim.opt.list = true
+vim.opt.listchars = {
+  space = "·",
+  trail = "-",
+  eol = "↲",
+  tab = "» ",
+}
