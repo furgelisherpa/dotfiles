@@ -44,3 +44,6 @@ function sr {
 alias se="sr ~/.local/bin" # scripts
 alias scc="sr ~/.config" # config
 alias sp="sr ~/.github" # projects
+
+# vim: set filetype=sh:
+
