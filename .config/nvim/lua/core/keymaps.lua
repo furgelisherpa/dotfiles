@@ -32,9 +32,6 @@ keymap("n", "<leader>tc", "<cmd>tabclose<cr>", opts)
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", opts)
 keymap("n", "<A-k>", "<cmd>m .-2<cr>==", opts)
 
--- copy current path into the paste buffer
-keymap("n", "<leader>fp", "<cmd>let @+=expand(\"%:p\")<cr>", opts)
-
 -- shortcut for opening/closing quickfix
 keymap("n", "<leader>q", "<cmd>ccl<cr>", opts)
 
