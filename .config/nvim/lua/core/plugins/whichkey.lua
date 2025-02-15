@@ -53,8 +53,8 @@ local mappings = {
   ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
   ["s"] = { "<cmd>set spell!<cr>", "Toggle Spell Checking" },
   ["cc"] = { "<cmd>!compiler %<cr>", "Compile" },
-  ["p"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview Markdown"},
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "File Manager"},
+  ["cp"] = { "<cmd>let @+=expand(\"%:p\")<cr>", "Copy CWD path"},
 
   f = {
     name = "Find",
