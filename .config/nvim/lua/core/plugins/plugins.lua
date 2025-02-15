@@ -87,13 +87,6 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'RRethy/vim-illuminate'
-  -- markdown preview
-  use {
-    'iamcco/markdown-preview.nvim',
-    run = function() vim.fn['mkdp#util#install']() end,
-  }
-  -- latex
-  use 'lervag/vimtex'
   -- formatter
   use 'nvimtools/none-ls.nvim'
   -- multiline cursor
@@ -101,18 +94,16 @@ return require('packer').startup(function(use)
   -- colorscheme
   use {
     'sainnhe/gruvbox-material',
-    requires = 'xiyaowong/transparent.nvim'
+    'craftzdog/solarized-osaka.nvim',
+    'loctvl842/monokai-pro.nvim',
   }
-  -- indent
-  use 'lukas-reineke/indent-blankline.nvim'
   -- delimiters
   use 'HiPhish/rainbow-delimiters.nvim'
-  -- dired like for nvim
+  -- file manager
   use {
-    'stevearc/oil.nvim',
+    'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons',
-      'nvim-tree/nvim-tree.lua' -- file manager
     }
   }
   -- automatically set up your configuration after cloning packer.nvim
