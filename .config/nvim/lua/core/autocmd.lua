@@ -9,3 +9,12 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end
   end,
 })
+
+-- auto switch cwd to current buffers path
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*",
+    callback = function()
+        local dir = vim.fn.expand("%:p:h")
+        vim.cmd("cd " .. dir)
+    end,
+})
