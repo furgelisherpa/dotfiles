@@ -12,9 +12,13 @@ vim.api.nvim_create_autocmd("TermOpen", {
 
 -- auto switch cwd to current buffers path
 vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "*",
-    callback = function()
-        local dir = vim.fn.expand("%:p:h")
-        vim.cmd("cd " .. dir)
-    end,
+  callback = function()
+    local cbftype = vim.bo.filetype
+    local ibftype = { "checkhealth", "help", "terminal"}
+    for _, type in ipairs(ibftype) do
+      if cbftype == type then return end
+    end
+    local dir = vim.fn.expand("%:p:h")
+    vim.cmd("cd " .. dir)
+  end,
 })
