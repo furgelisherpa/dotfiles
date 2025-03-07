@@ -13,12 +13,8 @@ ts.setup({
     disable = {},
   },
   ensure_installed = {
-    'vim', 'vimdoc',
-    'org', 'markdown',
-    'markdown_inline',
-    'css', 'html',
-    'lua', 'go',
-    'bash', 'c',
+    'vim', 'vimdoc', 'markdown', 'markdown_inline', 'css',
+    'html', 'lua', 'go', 'bash', 'c', 'commonlisp'
   },
   auto_install = true,
   autotag = { enable = true, },
