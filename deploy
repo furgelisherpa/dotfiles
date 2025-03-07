@@ -52,14 +52,14 @@ for TARGET; do
 done
 ' sh {} +
 
-#[ ! -d "${FONT_DIR}" ] && {
-#  echo "[INFO] Downloading ${FONT_NAME} Nerd Font"
-#  curl -Lo /tmp/"${FONT_NAME}".tar.xz https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/"${FONT_NAME}".tar.xz >/dev/null 2>&1
-#  echo "[INFO] Installing ${FONT_NAME} Nerd Font"
-#  mkdir -p "${FONT_DIR}"
-#  tar -xvf /tmp/"${FONT_NAME}".tar.xz -C "${FONT_DIR}" >/dev/null 2>&1
-#  fc-cache -vf >/dev/null 2>&1
-#  echo "[STATUS] Installation Finished!" && exit 0
-#}
-#
-#echo "[STATUS] ${FONT_NAME} is already installed!" && exit 1
+[ ! -d "${FONT_DIR}" ] && {
+  echo "[INFO] Downloading ${FONT_NAME} Nerd Font"
+  curl -Lo /tmp/"${FONT_NAME}".tar.xz https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/"${FONT_NAME}".tar.xz >/dev/null 2>&1
+  echo "[INFO] Installing ${FONT_NAME} Nerd Font"
+  mkdir -p "${FONT_DIR}"
+  tar -xvf /tmp/"${FONT_NAME}".tar.xz -C "${FONT_DIR}" >/dev/null 2>&1
+  fc-cache -vf >/dev/null 2>&1
+  echo "[STATUS] Installation Finished!" && exit 0
+}
+
+echo "[STATUS] ${FONT_NAME} is already installed!" && exit 1
