@@ -46,3 +46,4 @@ export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 
 export LC_ALL="en_US.UTF-8"
 export MANPAGER='nvim +Man!'
+export QT_STYLE_OVERRIDE="kvantum"
