@@ -1,7 +1,6 @@
 require "core.plugins.autopairs"
 require "core.plugins.cmp"
 require "core.plugins.colorscheme"
-require "core.plugins.comment"
 require "core.plugins.lsp"
 require "core.plugins.luatab"
 require "core.plugins.nvimtree"

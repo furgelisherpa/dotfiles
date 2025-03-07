@@ -47,8 +47,6 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   -- insert a paranthesis automatiacally
   use 'windwp/nvim-autopairs'
-  -- comment
-  use 'numToStr/Comment.nvim'
   -- lualine
   use 'nvim-lualine/lualine.nvim'
   -- tabline
