@@ -1,9 +1,7 @@
 local servers = {
-  "marksman",
-  "clangd",
-  "lua_ls",
-  "jdtls",
-  "pylsp"
+  "marksman", "clangd", "lua_ls",
+  "jdtls", "pylsp", "html",
+  "ts_ls", "cssls", "powershell_es"
 }
 
 local settings = {
