@@ -1,0 +1,44 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 20.0
+bold = { family = "Iosevka NF", style = "Bold" }
+bold_italic = { family = "Iosevka NF", style = "Bold Italic" }
+italic = { family = "Iosevka NF", style = "Italic" }
+normal = { family = "Iosevka NF", style = "Regular" }
+offset = { x = 0, y = 1 }
+
+[keyboard]
+bindings = [
+{ key = "V",      mods = "Control|Shift", action = "Paste"            },
+{ key = "C",      mods = "Control|Shift", action = "Copy"             },
+{ key = "Insert", mods = "Shift",         action = "PasteSelection"   },
+{ key = "Equals", mods = "Control",       action = "ResetFontSize"    },
+{ key = "Plus",   mods = "Control",       action = "IncreaseFontSize" },
+{ key = "Minus",  mods = "Control",       action = "DecreaseFontSize" },
+{ key = "L",      mods = "Control",       action = "ClearLogNotice"   },
+{ key = "L",      mods = "Control",       chars = "\f"                }
+]
+
+[scrolling]
+history = 5000
+
+[window]
+dynamic_padding = false
+opacity = 1
+blur = true
+title = "Alacritty"
+class = { general = "Alacritty", instance = "Alacritty" }
+startup_mode = "Maximized"
+
+[terminal]
+shell = { program = "/usr/bin/zsh", args = [ "-c", "tmux a -t system 2>&1 >/dev/null || tmux new -s system 2>&1 >/dev/null" ] }
+# shell = { program = "wsl", args = ["--cd", "~", "tmux a 2>&1 >/dev/null || tmux 2>&1 >/dev/null"] } (*windows specific)
+
+[general]
+import = [ "$HOME/.config/alacritty/theme/monokai.toml" ]
+# import = [ "C:\\Users\\furge\\AppData\\Roaming\\alacritty\\themes\\monokai.toml" ] (*windows specific)
