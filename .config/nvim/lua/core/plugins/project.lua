@@ -11,7 +11,7 @@ project.setup({
 	show_hidden = false,
 	silent_chdir = true,
 	ignore_lsp = {},
-  datapath = vim.fn.stdpath("data"),
+	datapath = vim.fn.stdpath("data"),
 })
 
 local tele_status_ok, telescope = pcall(require, "telescope")
@@ -19,4 +19,4 @@ if not tele_status_ok then
 	return
 end
 
-telescope.load_extension('projects')
+telescope.load_extension("projects")

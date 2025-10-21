@@ -1,111 +1,161 @@
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
-  return
+	return
 end
 
 local setup = {
-  plugins = {
-    marks = true,
-    registers = true,
-    spelling = {
-      enabled = true,
-      suggestions = 20,
-    },
-    presets = {
-      operators = false,
-      motions = true,
-      text_objects = true,
-      windows = true,
-      nav = true,
-      z = true,
-      g = true,
-    },
-  },
-  icons = {
-    breadcrumb = "»",
-    separator = "➜",
-    group = "+",
-  },
-  popup_mappings = {
-    scroll_down = "<c-d>",
-    scroll_up = "<c-u>",
-  },
-  ignore_missing = true,
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
-  show_help = true,
-  triggers = "auto",
-  triggers_blacklist = {
-    i = { "j", "k" },
-    v = { "j", "k" },
-  },
+	plugins = {
+		marks = true,
+		registers = true,
+		spelling = {
+			enabled = true,
+			suggestions = 20,
+		},
+		presets = {
+			operators = false,
+			motions = true,
+			text_objects = true,
+			windows = true,
+			nav = true,
+			z = true,
+			g = true,
+		},
+	},
+	icons = {
+		breadcrumb = "»",
+		separator = "➜",
+		group = "+",
+	},
+	popup_mappings = {
+		scroll_down = "<c-d>",
+		scroll_up = "<c-u>",
+	},
+	ignore_missing = true,
+	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
+	show_help = true,
+	triggers = "auto",
+	triggers_blacklist = {
+		i = { "j", "k" },
+		v = { "j", "k" },
+	},
 }
 
 local opts = {
-  mode = "n",
-  prefix = "<leader>",
-  buffer = nil,
-  silent = true,
-  noremap = true,
-  nowait = true,
+	mode = "n",
+	prefix = "<leader>",
+	buffer = nil,
+	silent = true,
+	noremap = true,
+	nowait = true,
 }
 
 local mappings = {
-  ["x"] = { "<cmd>!chmod +x %<cr>", "Make Executable" },
-  ["s"] = { "<cmd>set spell!<cr>", "Toggle Spell Checking" },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "File Manager"},
-  ["cb"] = { "<cmd>!compiler %<cr>", "Compile" },
-  ["cp"] = { "<cmd>let @+=expand(\"%:p\")<cr>", "Copy CWD path"},
+	e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 
-  f = {
-    name = "Find",
-    ["f"] = {
-      "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-      "Files"
-    },
-    ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    ["t"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-    ["h"] = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    ["m"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    ["r"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-    ["R"] = { "<cmd>Telescope registers<cr>", "Registers" },
-    ["k"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    ["c"] = { "<cmd>Telescope commands<cr>", "Commands" },
-  },
+	c = {
+		name = "Copy",
+		p = { "<cmd>let @+ = expand('%:p')<CR>", "Current File Path" },
+		d = { "<cmd>let @+ = expand('%:p:h')<CR>", "Current Directory Path" },
+		s = { "<cmd>let @+ = expand('%:p:h:t')<CR>", "Current Directory Name" },
+	},
 
-  b = {
-    name = "Buffer",
-    ["w"] = { "<cmd>w!<CR>", "Save" },
-    ["d"] = { "<cmd>bdelete!<CR>", "Delete" },
-    ["f"] = {
-      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-      "Buffers",
-    },
-    ["t"] = { "<cmd>filetype detect<cr>", "Detect Filetype" },
-  },
+	b = {
+		name = "Buffers",
+		e = { "<cmd>enew<CR>", "New Buffer" },
+		d = { "<cmd>bd!<CR>", "Close Buffer" },
+		f = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Buffers",
+		},
+	},
 
-  l = {
-    name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
-    w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
-    f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic" },
-    k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-  },
+	z = {
+		name = "CopilotChat",
+		c = { "<cmd>CopilotChat<cr>", "Open chat" },
+		i = {
+			function()
+				local input = vim.fn.input("Ask Copilot: ")
+				if input ~= "" then
+					vim.cmd("CopilotChat " .. input)
+				end
+			end,
+			"CopilotChat - Custom input",
+		},
+		e = { "<cmd>CopilotChatExplain<cr>", "Explain Code" },
+		r = { "<cmd>CopilotChatReview<cr>", "Review Code" },
+		f = { "<cmd>CopilotChatFix<cr>", "Fix Code Issues" },
+		o = { "<cmd>CopilotChatOptimize<cr>", "Optimize Code" },
+		d = { "<cmd>CopilotChatDocs<cr>", "Generate Docs" },
+		t = { "<cmd>CopilotChatTests<cr>", "Generate Tests" },
+		m = { "<cmd>CopilotChatCommit<cr>", "Generate Commit Message" },
+	},
 
-  t = {
-    name = "Terminal",
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=15 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-  },
+	l = {
+		name = "LSP",
+		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		d = {
+			"<cmd>Telescope diagnostics bufnr=0<cr>",
+			"Document Diagnostics",
+		},
+		w = {
+			"<cmd>Telescope diagnostics<cr>",
+			"Workspace Diagnostics",
+		},
+		f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+		i = { "<cmd>LspInfo<cr>", "Info" },
+		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+		S = {
+			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+			"Workspace Symbols",
+		},
+	},
+
+	f = {
+		name = "Find",
+		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+		R = { "<cmd>Telescope registers<cr>", "Registers" },
+		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		f = {
+			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Find files",
+		},
+		t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+		p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+	},
+
+	t = {
+		name = "Terminal",
+		h = { "<cmd>ToggleTerm size=15 direction=horizontal<cr>", "Horizontal" },
+		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+	},
+
+	s = {
+		name = "Session",
+		w = { "<cmd>SessionSave<cr>", "Save Session" },
+		l = { "<cmd>SessionRestore<cr>", "Restore Session" },
+		r = { "<cmd>SessionDelete<cr>", "Delete Session" },
+		s = { "<cmd>SessionSearch<cr>", "Search Sessions" },
+		p = { "<cmd>SessionPurge<cr>", "Purge Sessions" },
+		a = { "<cmd>SessionToggleAutoSave<cr>", "Auto Save Toggle" },
+		d = { "<cmd>SessionDisableAutoSave<cr>", "Disable Auto Save" },
+	},
+}
+
+local visual_mappings = {
+	z = {
+		name = "CopilotChat",
+		s = { "<cmd>CopilotChatCommit<cr>", "Generate Commit for Selection" },
+	},
 }
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+which_key.register(visual_mappings, { mode = "v", prefix = "<leader>" })

@@ -1,18 +1,18 @@
-local util = require 'lspconfig.util'
+local util = require("lspconfig.util")
 
 return {
-  default_config = {
-    cmd = { 'intelephense', '--stdio' },
-    filetypes = { 'php' },
-    root_dir = function(pattern)
-      local cwd = vim.uv.cwd()
-      local root = util.root_pattern('composer.json', '.git')(pattern)
-      -- prefer cwd if root is a descendant
-      return util.path.is_descendant(cwd, root) and cwd or root
-    end,
-  },
-  docs = {
-    description = [[
+	default_config = {
+		cmd = { "intelephense", "--stdio" },
+		filetypes = { "php" },
+		root_dir = function(pattern)
+			local cwd = vim.uv.cwd()
+			local root = util.root_pattern("composer.json", ".git")(pattern)
+			-- prefer cwd if root is a descendant
+			return util.path.is_descendant(cwd, root) and cwd or root
+		end,
+	},
+	docs = {
+		description = [[
 https://intelephense.com/
 
 `intelephense` can be installed via `npm`:
@@ -38,5 +38,5 @@ settings = {
 }
 ```
 ]],
-  },
+	},
 }

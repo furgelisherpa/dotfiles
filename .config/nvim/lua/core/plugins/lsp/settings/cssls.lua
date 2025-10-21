@@ -1,20 +1,20 @@
-local util = require 'lspconfig.util'
+local util = require("lspconfig.util")
 
 return {
-  default_config = {
-    cmd = { 'vscode-css-language-server', '--stdio' },
-    filetypes = { 'css', 'scss', 'less' },
-    init_options = { provideFormatter = true }, -- needed to enable formatting capabilities
-    root_dir = util.root_pattern('package.json', '.git'),
-    single_file_support = true,
-    settings = {
-      css = { validate = true },
-      scss = { validate = true },
-      less = { validate = true },
-    },
-  },
-  docs = {
-    description = [[
+	default_config = {
+		cmd = { "vscode-css-language-server", "--stdio" },
+		filetypes = { "css", "scss", "less" },
+		init_options = { provideFormatter = true }, -- needed to enable formatting capabilities
+		root_dir = util.root_pattern("package.json", ".git"),
+		single_file_support = true,
+		settings = {
+			css = { validate = true },
+			scss = { validate = true },
+			less = { validate = true },
+		},
+	},
+	docs = {
+		description = [[
 
 https://github.com/hrsh7th/vscode-langservers-extracted
 
@@ -36,5 +36,5 @@ require'lspconfig'.cssls.setup {
 }
 ```
 ]],
-  },
+	},
 }

@@ -69,7 +69,7 @@ vim.opt.foldnestmax = 10
 
 -- appearance
 vim.opt.termguicolors = true
-vim.opt.laststatus = 0
+vim.opt.laststatus = 2
 
 -- disable mouse
 vim.opt.mouse = ""
@@ -83,7 +83,7 @@ vim.opt.iskeyword:append("-,$,_")
 
 -- clean
 vim.opt.conceallevel = 2
-vim.opt.concealcursor = 'nc'
+vim.opt.concealcursor = "nc"
 
 -- spell lang
 vim.opt.spelllang = "en_us"
@@ -108,6 +108,12 @@ vim.opt.wildignore:append("*.swp,*.bak,*.pyc,*.class,*/tmp/*")
 -- display special characters like '.' for spaces and '>-' of tabs
 vim.opt.list = true
 vim.opt.listchars = {
-  space = "·",
-  tab = "» ",
+	space = "·",
+	tab = "» ",
 }
+
+-- set the default window border to rounded
+vim.o.winborder = "rounded"
+
+-- session options
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

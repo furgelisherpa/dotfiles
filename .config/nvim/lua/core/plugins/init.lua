@@ -1,14 +1,17 @@
 -- core plugin configs --
-require "core.plugins.autopairs"
-require "core.plugins.cmp"
-require "core.plugins.colorscheme"
-require "core.plugins.lsp"
-require "core.plugins.luatab"
-require "core.plugins.nvimtree"
-require "core.plugins.plugins"
-require "core.plugins.project"
-require "core.plugins.rainbow-delimiters"
-require "core.plugins.telescope"
-require "core.plugins.toggleterm"
-require "core.plugins.treesitter"
-require "core.plugins.whichkey"
+require("core.plugins.autopairs")
+require("core.plugins.autotag")
+require("core.plugins.cmp")
+require("core.plugins.colorizer")
+require("core.plugins.colorscheme")
+require("core.plugins.copilot")
+require("core.plugins.lsp")
+require("core.plugins.lualine")
+require("core.plugins.multi")
+require("core.plugins.nvimtree")
+require("core.plugins.plugins")
+require("core.plugins.project")
+require("core.plugins.telescope")
+require("core.plugins.toggleterm")
+require("core.plugins.treesitter")
+require("core.plugins.whichkey")
