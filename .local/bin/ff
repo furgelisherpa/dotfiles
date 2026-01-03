@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+DOC=`find ~/Documents -type f | fzf`
+[ -z "$DOC" ] && exit 1
+setsid -f zathura "$DOC" >/dev/null 2>&1

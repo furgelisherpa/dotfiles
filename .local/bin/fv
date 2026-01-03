@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+VIDS=`find ~/Videos -type f | fzf`
+[ -z "$VIDS" ] && exit 1
+setsid -f mpv "$VIDS" >/dev/null 2>&1

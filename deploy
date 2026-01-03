@@ -1,0 +1,65 @@
+#!/bin/sh
+
+FONT_NAME="Iosevka"
+FONT_DIR="${HOME}/.local/share/fonts/${FONT_NAME}"
+
+DOTFILES_DIR="${HOME}/.dotfiles"
+CONFIG_DIR="${HOME}/.config"
+LOCAL_BIN_DIR="${HOME}/.local/bin"
+
+mkdir -p "${CONFIG_DIR}"
+
+echo "Linking .dotfiles/* to ~/"
+find "${DOTFILES_DIR}" -mindepth 1 -maxdepth 1 ! -name 'README.md' ! -name 'LICENSE' ! -name '.git' ! -name 'deploy' ! -path "${DOTFILES_DIR}/.config" -exec sh -c '
+for TARGET; do
+  LINK_NAME="${HOME}/`basename "${TARGET}"`"
+  BASE_LINK_NAME="`basename "${LINK_NAME}"`"
+  if [ -e "${LINK_NAME}" ]; then
+    echo "[STATUS] Skipping ${BASE_LINK_NAME}; already established"
+  else
+    ln -s "${TARGET}" "${LINK_NAME}"
+    echo "[INFO] Link established: ${BASE_LINK_NAME} -> ${LINK_NAME}"
+  fi
+done
+' sh {} +
+
+echo "Linking .dotfiles/.config/* to ~/.config/"
+find "${DOTFILES_DIR}/.config" -mindepth 1 -maxdepth 1 -exec sh -c '
+for TARGET; do
+  LINK_NAME="${HOME}/.config/`basename "${TARGET}"`"
+  BASE_LINK_NAME="`basename "${LINK_NAME}"`"
+  if [ -e "${LINK_NAME}" ]; then
+    echo "[STATUS] Skipping ${BASE_LINK_NAME}; already established"
+  else
+    ln -s "${TARGET}" "${LINK_NAME}"
+    echo "[INFO] Link established: ${BASE_LINK_NAME} -> ${LINK_NAME}"
+  fi
+done
+' sh {} +
+
+echo "Linking .dotfiles/.local/bin/* to ~/.local/bin/"
+mkdir -p "${LOCAL_BIN_DIR}"
+find "${DOTFILES_DIR}/.local/bin" -mindepth 1 -maxdepth 1 -exec sh -c '
+for TARGET; do
+  LINK_NAME="${HOME}/.local/bin/`basename "${TARGET}"`"
+  BASE_LINK_NAME="`basename "${LINK_NAME}"`"
+  if [ -e "${LINK_NAME}" ]; then
+    echo "[STATUS] Skipping ${BASE_LINK_NAME}; already established"
+  else
+    ln -s "${TARGET}" "${LINK_NAME}"
+    echo "[INFO] Link established: ${BASE_LINK_NAME} -> ${LINK_NAME}"
+  fi
+done
+' sh {} +
+
+if [ ! -d "${FONT_DIR}" ]; then
+  echo "[INFO] Downloading ${FONT_NAME} Nerd Font"
+  curl -Lo /tmp/"${FONT_NAME}".tar.xz https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/"${FONT_NAME}".tar.xz >/dev/null 2>&1
+  echo "[INFO] Installing ${FONT_NAME} Nerd Font"
+  mkdir -p "${FONT_DIR}"
+  tar -xvf /tmp/"${FONT_NAME}".tar.xz -C "${FONT_DIR}" >/dev/null 2>&1
+  fc-cache -vf >/dev/null 2>&1
+  echo "[STATUS] Installation Finished!" && exit 0
+fi
+
+echo "[STATUS] ${FONT_NAME} is already installed!" && exit 1

@@ -1,0 +1,3 @@
+set selection-clipboard clipboard # use system clipboard
+set recolor true # use dark-mode by default
+set guioptions none # hide statusbar
